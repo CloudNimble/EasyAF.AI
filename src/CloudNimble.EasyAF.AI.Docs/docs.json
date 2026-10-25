@@ -1,0 +1,23 @@
+{
+  "colors": {
+    "primary": "#419AC5",
+    "dark": "#3CD0E2",
+    "light": "#419AC5"
+  },
+  "name": "CloudNimble.EasyAF.AI",
+  "navigation": {
+    "pages": [
+      {
+        "group": "Getting Started",
+        "icon": "stars",
+        "pages": [
+          "index",
+          "why-CloudNimble-EasyAF-AI",
+          "quickstart"
+        ]
+      }
+    ]
+  },
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "maple"
+}
