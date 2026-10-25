@@ -1,0 +1,74 @@
+---
+title: Getting Started with CloudNimble.EasyAF.AI
+sidebarTitle: Quickstart
+description: Get up and running with CloudNimble.EasyAF.AI in minutes
+icon: play
+---
+
+<Steps>
+  <Step title="Install" titleSize="h2">
+
+    ### Install CloudNimble.EasyAF.AI
+
+    Install the NuGet package:
+
+    ```bash
+    dotnet add package CloudNimble.EasyAF.AI
+    ```
+
+    Or use the Package Manager Console:
+
+    ```powershell
+    Install-Package CloudNimble.EasyAF.AI
+    ```
+
+  </Step>
+
+  <Step title="Configure" titleSize="h2">
+
+    ### Configure your application
+
+    Add CloudNimble.EasyAF.AI to your application's service collection:
+
+    ```csharp
+    using CloudNimble.EasyAF.AI;
+
+    // In your Program.cs or Startup.cs
+    services.AddCloudNimbleEasyAFAI();
+    ```
+
+    <Note>
+      Customize the configuration based on your needs. See the [Configuration Guide](/guides/configuration) for more options.
+    </Note>
+
+  </Step>
+
+  <Step title="Use" titleSize="h2">
+
+    ### Start using CloudNimble.EasyAF.AI
+
+    Basic usage example:
+
+    ```csharp
+    // Example code showing how to use CloudNimble.EasyAF.AI
+    var service = serviceProvider.GetRequiredService<IMyService>();
+    var result = await service.DoSomethingAsync();
+    ```
+
+    <Check>
+      You're now ready to start using CloudNimble.EasyAF.AI! Check out the [API Reference](/api-reference) for more details.
+    </Check>
+
+  </Step>
+</Steps>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="API Reference" icon="code" href="/api-reference">
+    Explore the complete API documentation
+  </Card>
+  <Card title="Guides" icon="book-open" href="/guides">
+    Learn more with detailed guides and tutorials
+  </Card>
+</CardGroup>

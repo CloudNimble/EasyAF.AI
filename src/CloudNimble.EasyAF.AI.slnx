@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution>
+  <Folder Name="/Docs/">
+    <Project Path="CloudNimble.EasyAF.AI.Docs/CloudNimble.EasyAF.AI.Docs.docsproj" Type="C#" />
+  </Folder>
+</Solution>
