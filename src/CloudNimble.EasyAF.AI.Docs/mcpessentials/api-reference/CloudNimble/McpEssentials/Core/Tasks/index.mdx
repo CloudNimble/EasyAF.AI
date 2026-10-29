@@ -1,0 +1,35 @@
+---
+title: Overview
+description: "Summary of the CloudNimble.McpEssentials.Core.Tasks Namespace"
+icon: folder-tree
+mode: wide
+keywords: ['CloudNimble.McpEssentials.Core.Tasks', 'namespace', 'ApplyResult', 'AuthenticatedMcpTaskStoreBase', 'AuthenticatedMcpTaskStoreOptions', 'IMcpTaskInputSignalBus', 'InMemoryAuthenticatedMcpTaskStore', 'IPerUserMcpTaskStore', 'McpTasksJsonContext', 'McpTaskUserRequiredException', 'StoredMcpTask']
+---
+
+## Types
+
+### <Icon icon="file-brackets-curly" iconType="duotone" color="#419AC5" size={24} style={{ paddingRight: '8px' }} /> Classes
+
+| Name | Summary |
+| ---- | ------- |
+| [ApplyResult](/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/ApplyResult) | Result of `CancellationToken)`. |
+| [AuthenticatedMcpTaskStoreBase](/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/AuthenticatedMcpTaskStoreBase) |  |
+| [AuthenticatedMcpTaskStoreOptions](/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/AuthenticatedMcpTaskStoreOptions) |  |
+| [InMemoryAuthenticatedMcpTaskStore](/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/InMemoryAuthenticatedMcpTaskStore) |  |
+| [McpTasksJsonContext](/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/McpTasksJsonContext) | Source-generated JSON for persisting [McpTasksJsonContext.InputRequest](/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/McpTasksJsonContext#inputrequest) maps on [StoredMcpTask](/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/StoredMcpTask). |
+| [McpTaskUserRequiredException](/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/McpTaskUserRequiredException) | The exception that is thrown when an authenticated task store is used without a current user. |
+| [StoredMcpTask](/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/StoredMcpTask) | Persistence foundation for an MCP task. Protocol fields plus owner and expiry.  Construct from `McpTaskInfo`, mutate with `Try*`, and emit the SDK record  with `InputRequest})`. Durable providers subclass this type (for example  `McpTaskEntity`) and add only engine-specific columns. |
+
+### <Icon icon="plug" iconType="duotone" color="#419AC5" size={24} style={{ paddingRight: '8px' }} /> Interfaces
+
+| Name | Summary |
+| ---- | ------- |
+| [IMcpTaskInputSignalBus](/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/IMcpTaskInputSignalBus) | Fan-out for `InputResponseReceived`  across processes. Stores with no native pub/sub (Entity Framework Core, distributed cache,  Azure Tables) take this as an optional constructor argument. |
+| [IPerUserMcpTaskStore](/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/IPerUserMcpTaskStore) |  |
+
+### <Icon icon="list-ol" iconType="duotone" color="#419AC5" size={24} style={{ paddingRight: '8px' }} /> Enums
+
+| Name | Summary |
+| ---- | ------- |
+| [ApplyResult](/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/ApplyResult) | Result of `CancellationToken)`. |
+

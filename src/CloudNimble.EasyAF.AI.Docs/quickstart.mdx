@@ -1,74 +1,116 @@
 ---
-title: Getting Started with CloudNimble.EasyAF.AI
+title: Getting Started with EasyAF.AI
 sidebarTitle: Quickstart
-description: Get up and running with CloudNimble.EasyAF.AI in minutes
+description: Pick the library that matches what you are building
 icon: play
 ---
 
-<Steps>
-  <Step title="Install" titleSize="h2">
+EasyAF.AI is a collection, not a single NuGet package. Install the library that matches the job.
 
-    ### Install CloudNimble.EasyAF.AI
-
-    Install the NuGet package:
+<Tabs>
+  <Tab title="MCP server">
+    A generic MCP server that more than one user will call. Start with [MCP Essentials](/mcpessentials).
 
     ```bash
-    dotnet add package CloudNimble.EasyAF.AI
+    dotnet add package McpEssentials.Core
     ```
 
-    Or use the Package Manager Console:
-
-    ```powershell
-    Install-Package CloudNimble.EasyAF.AI
-    ```
-
-  </Step>
-
-  <Step title="Configure" titleSize="h2">
-
-    ### Configure your application
-
-    Add CloudNimble.EasyAF.AI to your application's service collection:
+    Wire authenticated tasks into the official SDK server:
 
     ```csharp
-    using CloudNimble.EasyAF.AI;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.Extensions.DependencyInjection;
 
-    // In your Program.cs or Startup.cs
-    services.AddCloudNimbleEasyAFAI();
+    builder.Services.AddHttpContextAccessor();
+
+    builder.Services.AddMcpServer()
+        .WithHttpTransport(o => o.Stateless = true)
+        .WithTools<MyTools>()
+        .WithTasksPlus(sp => sp.GetRequiredService<IHttpContextAccessor>().HttpContext?.User);
     ```
 
-    <Note>
-      Customize the configuration based on your needs. See the [Configuration Guide](/guides/configuration) for more options.
-    </Note>
+    Persist those tasks with Entity Framework Core when the process is no longer the store:
 
-  </Step>
+    ```bash
+    dotnet add package McpEssentials.EntityFrameworkCore
+    ```
 
-  <Step title="Use" titleSize="h2">
+    Full walkthrough: [Authenticated tasks](/mcpessentials/guides/authenticated-tasks) and [stores](/mcpessentials/guides/stores).
+  </Tab>
+  <Tab title="OData API">
+    An OData API you want an assistant to query. Start with [OData MCP](/odata-mcp).
 
-    ### Start using CloudNimble.EasyAF.AI
+    **Remote MCP** — you host the API, customers connect their harness:
 
-    Basic usage example:
+    ```bash
+    dotnet add package Microsoft.OData.Mcp.AspNetCore
+    ```
+
+    **Local MCP** — a small app on your machine against any OData v4 service:
+
+    ```bash
+    dotnet tool install Microsoft.OData.Mcp --global
+    ```
+
+    Local MCP is for you. Remote MCP is what you offer **your** customers at `{prefix}/mcp`.
+
+    Full walkthrough: [Local MCP](/odata-mcp/guides/local) and [Remote MCP](/odata-mcp/guides/remote).
+  </Tab>
+  <Tab title="Claude Code hooks">
+    A hook processor that intercepts Claude Code. Start with [ClaudeEssentials](/claudeessentials).
+
+    ```bash
+    dotnet add package ClaudeEssentials
+    ```
+
+    Read JSON from stdin, decide, write JSON to stdout:
 
     ```csharp
-    // Example code showing how to use CloudNimble.EasyAF.AI
-    var service = serviceProvider.GetRequiredService<IMyService>();
-    var result = await service.DoSomethingAsync();
+    using CloudNimble.ClaudeEssentials.Hooks;
+    using CloudNimble.ClaudeEssentials.Hooks.Enums;
+    using CloudNimble.ClaudeEssentials.Hooks.Outputs;
+
+    var json = Console.In.ReadToEnd();
+    var input = ClaudeHooksSerializer.DeserializePreToolUseInput(json);
+
+    var output = new PreToolUseHookOutput<object>
+    {
+        Continue = true,
+        HookSpecificOutput = new PreToolUseSpecificOutput<object>
+        {
+            PermissionDecision = input.ToolName is "Read" or "Glob"
+                ? PermissionDecision.Allow
+                : PermissionDecision.Ask
+        }
+    };
+
+    Console.WriteLine(ClaudeHooksSerializer.SerializePreToolUseOutput(output));
     ```
 
-    <Check>
-      You're now ready to start using CloudNimble.EasyAF.AI! Check out the [API Reference](/api-reference) for more details.
-    </Check>
+    Full walkthrough: [ClaudeEssentials quickstart](/claudeessentials/quickstart).
+  </Tab>
+</Tabs>
 
-  </Step>
-</Steps>
+## How to choose
 
-## Next Steps
+| You are building… | Start here |
+|---|---|
+| A multi-user MCP server | [MCP Essentials](/mcpessentials) |
+| Assistant access to a live OData API | [OData MCP](/odata-mcp) |
+| Claude Code policy, context, or quality gates | [ClaudeEssentials](/claudeessentials) |
 
-<CardGroup cols={2}>
-  <Card title="API Reference" icon="code" href="/api-reference">
-    Explore the complete API documentation
+They compose. A Remote MCP host can use McpEssentials for tasks. Claude Code can call that host. Each library's own docs take it from here.
+
+## Next
+
+<CardGroup cols={3}>
+  <Card title="MCP Essentials" icon="server" href="/mcpessentials">
+    Authenticated tasks and stores
   </Card>
-  <Card title="Guides" icon="book-open" href="/guides">
-    Learn more with detailed guides and tutorials
+  <Card title="OData MCP" icon="database" href="/odata-mcp">
+    Local MCP and Remote MCP
+  </Card>
+  <Card title="ClaudeEssentials" icon="webhook" href="/claudeessentials">
+    Hook models and serialization
   </Card>
 </CardGroup>

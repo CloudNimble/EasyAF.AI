@@ -1,31 +1,55 @@
 <Project Sdk="DotNetDocs.Sdk/1.5.5-preview.1">
 
-	<PropertyGroup>
-		<DocumentationType>Mintlify</DocumentationType>
-		<GenerateDocumentation>true</GenerateDocumentation>
-		<NamespaceMode>Folder</NamespaceMode>
-		<ShowDocumentationStats>true</ShowDocumentationStats>
+    <PropertyGroup>
+        <DocumentationType>Mintlify</DocumentationType>
+        <GenerateDocumentation>true</GenerateDocumentation>
+        <NamespaceMode>Folder</NamespaceMode>
+        <ShowDocumentationStats>true</ShowDocumentationStats>
 
-		<ConceptualDocsEnabled>false</ConceptualDocsEnabled>
-		<ShowPlaceholders>false</ShowPlaceholders>
-    <MintlifyTemplate>
-        <Name>CloudNimble.EasyAF.AI</Name>
-        <Theme>maple</Theme>
-        <Colors>
-            <Primary>#419AC5</Primary>
-            <Light>#419AC5</Light>
-            <Dark>#3CD0E2</Dark>
-        </Colors>
-        <Navigation Mode="Unified">
-            <Pages>
-                <Groups>
-                    <Group Name="Getting Started" Icon="stars">
-                        <Pages>index;why-CloudNimble-EasyAF-AI;quickstart</Pages>
-                    </Group>
-                </Groups>
-            </Pages>
-        </Navigation>
-    </MintlifyTemplate>
-	</PropertyGroup>
+        <ConceptualDocsEnabled>false</ConceptualDocsEnabled>
+        <ShowPlaceholders>false</ShowPlaceholders>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <MintlifyTemplate>
+            <Name>EasyAF.AI</Name>
+            <Theme>maple</Theme>
+            <Colors>
+                <Primary>#419AC5</Primary>
+                <Light>#419AC5</Light>
+                <Dark>#3CD0E2</Dark>
+            </Colors>
+            <Appearance>
+                <Default>dark</Default>
+            </Appearance>
+            <Styling>
+                <Codeblocks>dark</Codeblocks>
+            </Styling>
+            <Navigation Mode="Unified" Type="Tabs" Name="EasyAF.AI">
+                <Pages>
+                    <Groups>
+                        <Group Name="Getting Started" Icon="stars">
+                            <Pages>
+                                index;
+                                why-easyaf-ai;
+                                quickstart
+                            </Pages>
+                        </Group>
+                    </Groups>
+                </Pages>
+            </Navigation>
+            <Interaction>
+                <Drilldown>true</Drilldown>
+            </Interaction>
+        </MintlifyTemplate>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <DocumentationReference Include="..\..\external\McpEssentials\src\CloudNimble.McpEssentials.Docs\CloudNimble.McpEssentials.Docs.docsproj" DestinationPath="mcpessentials" IntegrationType="Tabs" Name="MCP Essentials" />
+
+        <DocumentationReference Include="..\..\external\OData-MCP\src\Microsoft.OData.Mcp.Docs\Microsoft.OData.Mcp.Docs.docsproj" DestinationPath="odata-mcp" IntegrationType="Tabs" Name="OData MCP" />
+
+        <DocumentationReference Include="..\..\external\ClaudeEssentials\src\CloudNimble.ClaudeEssentials.Docs\CloudNimble.ClaudeEssentials.Docs.docsproj" DestinationPath="claudeessentials" IntegrationType="Tabs" Name="ClaudeEssentials" />
+    </ItemGroup>
 
 </Project>

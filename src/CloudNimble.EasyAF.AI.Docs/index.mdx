@@ -1,38 +1,70 @@
 ---
-title: CloudNimble.EasyAF.AI Documentation
+title: EasyAF.AI
 sidebarTitle: Home
-description: Welcome to the CloudNimble.EasyAF.AI documentation
+description: Fast, standards-based, queryable AIs on top of EasyAF
 icon: house
 ---
 
-# CloudNimble.EasyAF.AI
+# EasyAF.AI
 
-Welcome to the CloudNimble.EasyAF.AI documentation. This documentation is automatically generated from XML comments in the source code and kept up-to-date with every build.
+EasyAF is how CloudNimble ships secure, scalable .NET applications quickly. EasyAF.AI is the layer that lets assistants use those applications the same way your own clients do: through open standards, against live data, with a catalog small enough to fit in a prompt.
 
-## Getting Started
+The assistant speaks [Model Context Protocol](https://modelcontextprotocol.io). Your APIs stay [OData](https://www.odata.org). Nothing in the middle asks anyone to paste a spreadsheet into the chat.
 
-<CardGroup cols={2}>
-  <Card title="Why CloudNimble.EasyAF.AI?" icon="square-question" href="why-cloudnimble-easyaf-ai">
-    Learn about the motivation and design philosophy behind CloudNimble.EasyAF.AI
+## The stack
+
+Three libraries. Each one has its own documentation in the tabs above. This page is the map.
+
+<CardGroup cols={3}>
+  <Card title="MCP Essentials" icon="server" href="/mcpessentials">
+    Host generic MCP servers that more than one user can share. Authenticated tasks and durable stores on top of the official MCP C# SDK.
   </Card>
-  <Card title="Quickstart" icon="play" href="quickstart">
-    Get up and running with CloudNimble.EasyAF.AI in minutes
+  <Card title="OData MCP" icon="database" href="/odata-mcp">
+    Point an assistant at a live OData API. A compact catalog of named tools replaces a 4,000-token `$metadata` dump.
+  </Card>
+  <Card title="ClaudeEssentials" icon="webhook" href="/claudeessentials">
+    AOT-ready .NET models for Claude Code hooks. Serialize stdin, apply policy, write stdout. Zero reflection.
   </Card>
 </CardGroup>
 
-## Features
+## What "queryable AI" means here
 
-- Feature 1: Description
-- Feature 2: Description
-- Feature 3: Description
+A standards-based API is already queryable: `$filter`, `$expand`, `$select`, bound actions. EasyAF leans on that. EasyAF.AI makes the same API queryable **by an assistant** without teaching the model to read EDMX.
 
-## Documentation Sections
+| Layer | Standard | Role |
+|---|---|---|
+| Data and HTTP | OData v4 | The API you already run. Filter, expand, page, act. |
+| Assistant protocol | MCP 2.0 | How Claude, Cursor, and other harnesses call tools. |
+| Catalog | OData MCP | Named tools and compact type cards built from `$metadata`. |
+| Hosting | McpEssentials | Multi-user MCP servers with per-user task isolation. |
+| Agent runtime | ClaudeEssentials | Strongly-typed hooks so Claude Code stays under your policy. |
+
+The assistant spends tokens on the question. It does not chew through `$metadata` to guess how your service works.
+
+## How the pieces fit
+
+<Steps>
+  <Step title="Ship an API the EasyAF way">
+    EasyAF gives you the application shape: managers, OData/REST, audit, the bits that make a .NET backend fast to build and safe to run. That API is already a standard. EasyAF.AI does not replace it.
+  </Step>
+  <Step title="Give the assistant a protocol">
+    MCP is how the assistant talks. [MCP Essentials](/mcpessentials) fills the gaps in the official C# SDK that show up the moment the server has more than one user: who started a task, who may poll it, where the snapshot lives.
+  </Step>
+  <Step title="Make the API queryable by that assistant">
+    [OData MCP](/odata-mcp) reads `$metadata` once and hands the model a compact catalog. Local MCP runs on your machine against any OData service. Remote MCP ships on the API you host, at `{prefix}/mcp`.
+  </Step>
+  <Step title="Keep Claude Code honest in the repo">
+    [ClaudeEssentials](/claudeessentials) is the hook surface for Claude Code: allow, deny, inject context, block a stop. Source-generated JSON, AOT-ready, no extra dependencies.
+  </Step>
+</Steps>
+
+## Start here
 
 <CardGroup cols={2}>
-  <Card title="API Reference" icon="code" href="api-reference">
-    Complete API documentation for all public types and members
+  <Card title="Why EasyAF.AI?" icon="square-question" href="/why-easyaf-ai">
+    The design bet: standards in, standards out, catalogs instead of context-window dumps.
   </Card>
-  <Card title="Guides" icon="book-open">
-    Step-by-step guides and tutorials
+  <Card title="Quickstart" icon="play" href="/quickstart">
+    Pick the library that matches what you are building and install it.
   </Card>
 </CardGroup>

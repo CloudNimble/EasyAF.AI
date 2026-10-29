@@ -1,0 +1,36 @@
+---
+title: Overview
+description: "Summary of the Microsoft.OData.Mcp.Core.Catalog Namespace"
+icon: folder-tree
+mode: wide
+keywords: ['Microsoft.OData.Mcp.Core.Catalog', 'namespace', 'EdmModelShape', 'EdmPayloadValidator', 'EdmTypeShape', 'ODataEnumJsonFormat', 'ODataMcpCatalog', 'ODataMcpCatalogOptions', 'ODataMcpInstructions', 'ODataMcpSession', 'ODataOperationKind', 'ODataResourceDescriptor']
+---
+
+## Types
+
+### <Icon icon="file-brackets-curly" iconType="duotone" color="#419AC5" size={24} style={{ paddingRight: '8px' }} /> Classes
+
+| Name | Summary |
+| ---- | ------- |
+| [EdmModelShape](/odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/EdmModelShape) | Renders the whole-service map behind `odata_describe_model`: a summary of sets and navigations, a complete  dump of every in-scope type, a relationship-only mermaid diagram, and the unbound operation list. |
+| [EdmPayloadValidator](/odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/EdmPayloadValidator) | Validates tool payloads against the declared EDM before any OData HTTP is sent, and formats values for the wire. |
+| [EdmTypeShape](/odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/EdmTypeShape) | The shape of one entity type as the calling AI reads it: the declaration-grammar text, the compact JSON,  the exposed properties, the required-on-create names, and the operations bound to the type. |
+| [ODataEnumJsonFormat](/odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataEnumJsonFormat) | Controls how enumeration values are advertised in JSON Schema and accepted on input. |
+| [ODataMcpCatalog](/odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataMcpCatalog) | Builds MCP resources and tools from a Core EDM. Only declared model members  are serialized into catalogs, schemas, and completions. |
+| [ODataMcpCatalogOptions](/odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataMcpCatalogOptions) | Options that control how an [ODataMcpCatalog](/odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataMcpCatalog) is built from an EDM. |
+| [ODataMcpInstructions](/odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataMcpInstructions) | The MCP `initialize.instructions` text every OData MCP host advertises. |
+| [ODataMcpSession](/odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataMcpSession) | Per-endpoint MCP state: catalog, runtime, and optional CSDL cache. |
+| [ODataOperationKind](/odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataOperationKind) | Distinguishes CRUD/generic catalog tools from named OData operations. |
+| [ODataResourceDescriptor](/odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataResourceDescriptor) | A resource advertised on `resources/list`. |
+| [ODataResourceTemplateDescriptor](/odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataResourceTemplateDescriptor) | A resource template advertised on `resources/templates/list`. |
+| [ODataToolDescriptor](/odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataToolDescriptor) | A tool advertised on `tools/list`. |
+| [ODataToolInvocationResult](/odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataToolInvocationResult) | The result of invoking a catalog tool. |
+| [ODataToolRuntime](/odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataToolRuntime) | Executes catalog tools against an [IODataExecutor](/odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Execution/IODataExecutor). |
+
+### <Icon icon="list-ol" iconType="duotone" color="#419AC5" size={24} style={{ paddingRight: '8px' }} /> Enums
+
+| Name | Summary |
+| ---- | ------- |
+| [ODataEnumJsonFormat](/odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataEnumJsonFormat) | Controls how enumeration values are advertised in JSON Schema and accepted on input. |
+| [ODataOperationKind](/odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataOperationKind) | Distinguishes CRUD/generic catalog tools from named OData operations. |
+

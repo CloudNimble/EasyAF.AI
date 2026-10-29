@@ -1,0 +1,12 @@
+[submodule "external/McpEssentials"]
+	path = external/McpEssentials
+	url = https://github.com/CloudNimble/McpEssentials.git
+	branch = dev
+[submodule "external/OData-MCP"]
+	path = external/OData-MCP
+	url = https://github.com/OData/MCP.git
+	branch = feature/mcptask
+[submodule "external/ClaudeEssentials"]
+	path = external/ClaudeEssentials
+	url = https://github.com/CloudNimble/ClaudeEssentials.git
+	branch = main

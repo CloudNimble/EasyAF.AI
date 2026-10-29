@@ -1,23 +1,788 @@
 {
+  "appearance": {
+    "default": "dark"
+  },
   "colors": {
     "primary": "#419AC5",
     "dark": "#3CD0E2",
     "light": "#419AC5"
   },
-  "name": "CloudNimble.EasyAF.AI",
+  "interaction": {
+    "drilldown": true
+  },
+  "name": "EasyAF.AI",
   "navigation": {
-    "pages": [
+    "tabs": [
       {
-        "group": "Getting Started",
-        "icon": "stars",
+        "tab": "EasyAF.AI",
         "pages": [
-          "index",
-          "why-CloudNimble-EasyAF-AI",
-          "quickstart"
+          {
+            "group": "Getting Started",
+            "icon": "stars",
+            "pages": [
+              "index",
+              "why-easyaf-ai",
+              "quickstart"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "MCP Essentials",
+        "href": "mcpessentials",
+        "pages": [
+          {
+            "group": "Getting Started",
+            "icon": "stars",
+            "pages": [
+              "mcpessentials/index"
+            ]
+          },
+          {
+            "group": "Guides",
+            "root": "mcpessentials/guides/index",
+            "icon": "dog-leashed",
+            "pages": [
+              "mcpessentials/guides/index",
+              "mcpessentials/guides/authenticated-tasks",
+              {
+                "group": "Stores",
+                "root": "mcpessentials/guides/stores/index",
+                "icon": "database",
+                "pages": [
+                  "mcpessentials/guides/stores/index",
+                  {
+                    "group": "Database",
+                    "icon": "hard-drive",
+                    "pages": [
+                      "mcpessentials/guides/stores/entity-framework-core",
+                      "mcpessentials/guides/stores/postgresql",
+                      "mcpessentials/guides/stores/sql-server",
+                      "mcpessentials/guides/stores/cosmos",
+                      "mcpessentials/guides/stores/mongodb",
+                      "mcpessentials/guides/stores/azure-tables"
+                    ]
+                  },
+                  {
+                    "group": "Distributed cache",
+                    "icon": "server",
+                    "pages": [
+                      "mcpessentials/guides/stores/redis",
+                      "mcpessentials/guides/stores/distributed-cache"
+                    ]
+                  },
+                  {
+                    "group": "Eventing",
+                    "icon": "tower-broadcast",
+                    "pages": [
+                      "mcpessentials/guides/stores/nats"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "API Reference",
+            "icon": "code",
+            "pages": [
+              {
+                "group": "CloudNimble",
+                "icon": "folder-tree",
+                "pages": [
+                  {
+                    "group": "McpEssentials",
+                    "icon": "folder-tree",
+                    "pages": [
+                      {
+                        "group": "Core",
+                        "icon": "folder-tree",
+                        "pages": [
+                          {
+                            "group": "Tasks",
+                            "icon": "folder-tree",
+                            "pages": [
+                              "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/index",
+                              "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/ApplyResult",
+                              "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/AuthenticatedMcpTaskStoreBase",
+                              "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/AuthenticatedMcpTaskStoreOptions",
+                              "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/IMcpTaskInputSignalBus",
+                              "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/InMemoryAuthenticatedMcpTaskStore",
+                              "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/IPerUserMcpTaskStore",
+                              "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/McpTasksJsonContext",
+                              "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/McpTaskUserRequiredException",
+                              "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/StoredMcpTask"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "group": "EntityFrameworkCore",
+                        "icon": "folder-tree",
+                        "pages": [
+                          {
+                            "group": "Tasks",
+                            "icon": "folder-tree",
+                            "pages": [
+                              "mcpessentials/api-reference/CloudNimble/McpEssentials/EntityFrameworkCore/Tasks/index",
+                              "mcpessentials/api-reference/CloudNimble/McpEssentials/EntityFrameworkCore/Tasks/EntityFrameworkAuthenticatedTaskStore",
+                              "mcpessentials/api-reference/CloudNimble/McpEssentials/EntityFrameworkCore/Tasks/McpTaskEntity",
+                              "mcpessentials/api-reference/CloudNimble/McpEssentials/EntityFrameworkCore/Tasks/McpTaskEntityConfiguration"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Microsoft",
+                "icon": "folder-tree",
+                "pages": [
+                  {
+                    "group": "EntityFrameworkCore",
+                    "icon": "folder-tree",
+                    "pages": [
+                      "mcpessentials/api-reference/Microsoft/EntityFrameworkCore/index",
+                      "mcpessentials/api-reference/Microsoft/EntityFrameworkCore/DbContextOptionsBuilder",
+                      "mcpessentials/api-reference/Microsoft/EntityFrameworkCore/DbContextOptionsBuilder",
+                      "mcpessentials/api-reference/Microsoft/EntityFrameworkCore/ModelBuilder"
+                    ]
+                  },
+                  {
+                    "group": "Extensions",
+                    "icon": "folder-tree",
+                    "pages": [
+                      {
+                        "group": "DependencyInjection",
+                        "icon": "folder-tree",
+                        "pages": [
+                          "mcpessentials/api-reference/Microsoft/Extensions/DependencyInjection/index",
+                          "mcpessentials/api-reference/Microsoft/Extensions/DependencyInjection/IMcpServerBuilder",
+                          "mcpessentials/api-reference/Microsoft/Extensions/DependencyInjection/IServiceCollection"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "OData MCP",
+        "href": "odata-mcp",
+        "pages": [
+          {
+            "group": "Getting Started",
+            "icon": "stars",
+            "pages": [
+              "odata-mcp/index"
+            ]
+          },
+          {
+            "group": "Guides",
+            "root": "odata-mcp/guides/index",
+            "icon": "dog-leashed",
+            "pages": [
+              "odata-mcp/guides/index",
+              {
+                "group": "Local MCP",
+                "root": "odata-mcp/guides/local/index",
+                "pages": [
+                  "odata-mcp/guides/local/index",
+                  "odata-mcp/guides/local/get-started",
+                  "odata-mcp/guides/local/sign-in",
+                  "odata-mcp/guides/local/how-it-works"
+                ]
+              },
+              {
+                "group": "Remote MCP",
+                "root": "odata-mcp/guides/remote/index",
+                "pages": [
+                  "odata-mcp/guides/remote/index",
+                  "odata-mcp/guides/remote/setup",
+                  "odata-mcp/guides/remote/advanced",
+                  "odata-mcp/guides/remote/tasks",
+                  "odata-mcp/guides/remote/elicitations",
+                  "odata-mcp/guides/remote/authentication"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "API Reference",
+            "icon": "code",
+            "pages": [
+              {
+                "group": "Microsoft",
+                "icon": "folder-tree",
+                "pages": [
+                  {
+                    "group": "AspNetCore",
+                    "icon": "folder-tree",
+                    "pages": [
+                      {
+                        "group": "Builder",
+                        "icon": "folder-tree",
+                        "pages": [
+                          "odata-mcp/api-reference/Microsoft/AspNetCore/Builder/index",
+                          "odata-mcp/api-reference/Microsoft/AspNetCore/Builder/IApplicationBuilder"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "group": "Extensions",
+                    "icon": "folder-tree",
+                    "pages": [
+                      {
+                        "group": "DependencyInjection",
+                        "icon": "folder-tree",
+                        "pages": [
+                          "odata-mcp/api-reference/Microsoft/Extensions/DependencyInjection/index",
+                          "odata-mcp/api-reference/Microsoft/Extensions/DependencyInjection/IMcpServerBuilder",
+                          "odata-mcp/api-reference/Microsoft/Extensions/DependencyInjection/IServiceCollection"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "group": "OData",
+                    "icon": "folder-tree",
+                    "pages": [
+                      {
+                        "group": "Mcp",
+                        "icon": "folder-tree",
+                        "pages": [
+                          {
+                            "group": "AspNetCore",
+                            "icon": "folder-tree",
+                            "pages": [
+                              {
+                                "group": "Adaptation",
+                                "icon": "folder-tree",
+                                "pages": [
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Adaptation/index",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Adaptation/EdmModelAdapter"
+                                ]
+                              },
+                              {
+                                "group": "Authentication",
+                                "icon": "folder-tree",
+                                "pages": [
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Authentication/index",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Authentication/ProtectedResourceMetadataMiddleware",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Authentication/ProtectedResourceMetadataOptions",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Authentication/ProtectedResourceMetadataStartupFilter"
+                                ]
+                              },
+                              {
+                                "group": "Constants",
+                                "icon": "folder-tree",
+                                "pages": [
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Constants/index",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Constants/AspNetCoreJsonConstants",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Constants/ProtectedResourceConstants"
+                                ]
+                              },
+                              {
+                                "group": "Execution",
+                                "icon": "folder-tree",
+                                "pages": [
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Execution/index",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Execution/InProcessODataExecutor"
+                                ]
+                              },
+                              {
+                                "group": "Hosting",
+                                "icon": "folder-tree",
+                                "pages": [
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Hosting/index",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Hosting/IMcpAnnotatedActionWaiter",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Hosting/McpAnnotatedActionContext",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Hosting/McpHttpContextAccessor",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Hosting/ODataMcpHostOptions",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Hosting/ODataMcpPipeline",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Hosting/ODataMcpPipelineStartupFilter",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Hosting/ODataMcpRouteBinding",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Hosting/ODataMcpRouteDiscovery",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Hosting/ODataMcpServerBuilder",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Hosting/ODataMcpSessionFactory"
+                                ]
+                              },
+                              {
+                                "group": "Vocabularies",
+                                "icon": "folder-tree",
+                                "pages": [
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Vocabularies/index",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Vocabularies/McpTaskAnnotations",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Vocabularies/McpTaskAttributeAnnotations",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Vocabularies/McpVocabularyModel"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "Authentication",
+                            "icon": "folder-tree",
+                            "pages": [
+                              {
+                                "group": "Outbound",
+                                "icon": "folder-tree",
+                                "pages": [
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/index",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/AuthorizationCodePkceGrant",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/AuthorizationServerMetadata",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/AuthorizationServerMetadataClient",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/ClientCredentialsGrant",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/DeviceAuthorizationResponse",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/DeviceCodeGrant",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/DynamicClientRegistrar",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/DynamicClientRegistrationRequest",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/FileIdTokenCallback",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/GrantSelector",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/LatchkeyTokenCache",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/LoopbackAuthorizationCallback",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OAuthChallenge",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OAuthConsentRequiredException",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OAuthDiscovery",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OAuthDiscoveryResult",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OAuthErrorPayload",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OAuthTokenException",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/ODataMcpAuthConstants",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/ODataOutboundAuthHandler",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OutboundAuthLogRedactor",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OutboundConsentRequest",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OutboundDiscoveryException",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OutboundGrantKind",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OutboundGrantKindParser",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OutboundOAuthClient",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OutboundOAuthOptions",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/ProtectedResourceMetadataClient",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/RefreshTokenGrant",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/ScopeResolver",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/TokenEndpointClient",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/TokenEndpointResponse",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/WwwAuthenticateParser"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "Core",
+                            "icon": "folder-tree",
+                            "pages": [
+                              {
+                                "group": "Catalog",
+                                "icon": "folder-tree",
+                                "pages": [
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/index",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/EdmModelShape",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/EdmPayloadValidator",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/EdmTypeShape",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataEnumJsonFormat",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataMcpCatalog",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataMcpCatalogOptions",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataMcpInstructions",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataMcpSession",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataOperationKind",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataResourceDescriptor",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataResourceTemplateDescriptor",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataToolDescriptor",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataToolInvocationResult",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataToolRuntime"
+                                ]
+                              },
+                              {
+                                "group": "Constants",
+                                "icon": "folder-tree",
+                                "pages": [
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Constants/index",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Constants/JsonConstants",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Constants/ODataMcpCatalogConstants"
+                                ]
+                              },
+                              {
+                                "group": "Diagnostics",
+                                "icon": "folder-tree",
+                                "pages": [
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Diagnostics/index",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Diagnostics/ProbeOutcome",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Diagnostics/ProbeStep",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Diagnostics/ServiceProbe",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Diagnostics/ServiceProbeResult",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Diagnostics/ServiceVerdict"
+                                ]
+                              },
+                              {
+                                "group": "Execution",
+                                "icon": "folder-tree",
+                                "pages": [
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Execution/index",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Execution/IODataExecutor",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Execution/ODataExecuteRequest",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Execution/ODataExecuteResult",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Execution/RemoteODataExecutor"
+                                ]
+                              },
+                              {
+                                "group": "Models",
+                                "icon": "folder-tree",
+                                "pages": [
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/index",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmAction",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmActionImport",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmComplexType",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmDocumentation",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmEntityContainer",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmEntitySet",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmEntityType",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmEnumMember",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmEnumType",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmFunction",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmFunctionImport",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmModel",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmNavigationProperty",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmNavigationPropertyBinding",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmParameter",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmPrimitiveType",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmProperty",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmReferentialConstraint",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmSingleton"
+                                ]
+                              },
+                              {
+                                "group": "Parsing",
+                                "icon": "folder-tree",
+                                "pages": [
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Parsing/index",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Parsing/CsdlParser",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Parsing/ICsdlMetadataParser"
+                                ]
+                              },
+                              {
+                                "group": "Vocabularies",
+                                "icon": "folder-tree",
+                                "pages": [
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Vocabularies/index",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Vocabularies/McpElicitUrlAttribute",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Vocabularies/McpTaskAttribute",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Vocabularies/McpVocabulary"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "Tools",
+                            "icon": "folder-tree",
+                            "pages": [
+                              "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/index",
+                              "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Program",
+                              {
+                                "group": "Commands",
+                                "icon": "folder-tree",
+                                "pages": [
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Commands/index",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Commands/AddAuthChoice",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Commands/AddCommand",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Commands/AddCommandAuthSettings",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Commands/ODataMcpRootCommand",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Commands/StartCommand",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Commands/TryCommand"
+                                ]
+                              },
+                              {
+                                "group": "Hosting",
+                                "icon": "folder-tree",
+                                "pages": [
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Hosting/index",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Hosting/ShutdownServerTool",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Hosting/StdioConsentPresenter",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Hosting/ToolsMcpHost",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Hosting/ToolsMcpSessionHolder"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "group": "ModelBuilder",
+                        "icon": "folder-tree",
+                        "pages": [
+                          "odata-mcp/api-reference/Microsoft/OData/ModelBuilder/index",
+                          "odata-mcp/api-reference/Microsoft/OData/ModelBuilder/ActionConfiguration"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "ClaudeEssentials",
+        "href": "claudeessentials",
+        "pages": [
+          {
+            "group": "Getting Started",
+            "icon": "stars",
+            "pages": [
+              "claudeessentials/index",
+              "claudeessentials/why-claudeessentials",
+              "claudeessentials/quickstart"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "claudeessentials/guides/understanding-hooks"
+            ]
+          },
+          {
+            "group": "API Reference",
+            "icon": "code",
+            "pages": [
+              {
+                "group": "CloudNimble",
+                "icon": "folder-tree",
+                "pages": [
+                  {
+                    "group": "ClaudeEssentials",
+                    "icon": "folder-tree",
+                    "pages": [
+                      {
+                        "group": "Hooks",
+                        "icon": "folder-tree",
+                        "pages": [
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/index",
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ClaudeHooksJsonContext",
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ClaudeHooksSerializer",
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ClaudeModel",
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/CompactTrigger",
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ConfigOperation",
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ContentBlockType",
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/GitDiffStatus",
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/GrepOutputMode",
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/HookDecision",
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/HookEventName",
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/NotebookCellType",
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/NotebookEditMode",
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/NotificationType",
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PermissionDecision",
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PermissionMode",
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PermissionRequestBehavior",
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/SessionEndReason",
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/SessionStartSource",
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/TaskExecutionStatus",
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/TodoItemStatus",
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/WorktreeAction",
+                          "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/WriteOperationType",
+                          {
+                            "group": "Inputs",
+                            "icon": "folder-tree",
+                            "pages": [
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/index",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/HookInputBase",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/NotificationHookInput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/PermissionRequestHookInput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/PostToolUseHookInput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/PreCompactHookInput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/PreToolUseHookInput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/SessionEndHookInput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/SessionStartHookInput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/StopHookInput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/SubagentStopHookInput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/ToolHookInputBase",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/UserPromptSubmitHookInput"
+                            ]
+                          },
+                          {
+                            "group": "Outputs",
+                            "icon": "folder-tree",
+                            "pages": [
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/index",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/HookOutputBase",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/HookSpecificOutputBase",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/NotificationHookOutput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/PermissionRequestDecision",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/PermissionRequestHookOutput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/PermissionRequestSpecificOutput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/PostToolUseHookOutput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/PostToolUseSpecificOutput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/PreCompactHookOutput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/PreToolUseHookOutput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/PreToolUseSpecificOutput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/SessionEndHookOutput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/SessionStartHookOutput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/SessionStartSpecificOutput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/StopHookOutput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/SubagentStopHookOutput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/UserPromptSubmitHookOutput",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/UserPromptSubmitSpecificOutput"
+                            ]
+                          },
+                          {
+                            "group": "Tools",
+                            "icon": "folder-tree",
+                            "pages": [
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/index",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/AgentPostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/AgentPreToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/AskUserQuestionPostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/AskUserQuestionPreToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/BashPostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/BashPreToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/ConfigPostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/ConfigPreToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/EditPostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/EditPreToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/EnterWorktreePostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/EnterWorktreePreToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/ExitPlanModePostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/ExitPlanModePreToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/ExitWorktreePostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/ExitWorktreePreToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/GlobPostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/GlobPreToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/GrepPostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/GrepPreToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/KillShellPostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/KillShellPreToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/ListMcpResourcesPostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/ListMcpResourcesPreToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/McpPostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/McpPreToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/NotebookEditPostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/NotebookEditPreToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/ReadMcpResourcePostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/ReadMcpResourcePreToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/ReadPostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/ReadPreToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/TaskOutputPostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/TaskOutputPreToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/TaskPostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/TaskPreToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/TaskStopPostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/TaskStopPreToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/TodoWritePostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/TodoWritePreToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/WebFetchPostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/WebFetchPreToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/WebSearchPostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/WebSearchPreToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/WritePostToolUsePayload",
+                              "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/WritePreToolUsePayload",
+                              {
+                                "group": "Inputs",
+                                "icon": "folder-tree",
+                                "pages": [
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/index",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/AgentToolInput",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/AskUserQuestion",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/AskUserQuestionOption",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/AskUserQuestionToolInput",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/BashToolInput",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/ConfigToolInput",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/EditToolInput",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/EnterWorktreeToolInput",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/ExitPlanModeAllowedPrompt",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/ExitPlanModeToolInput",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/ExitWorktreeToolInput",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/GlobToolInput",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/GrepToolInput",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/KillShellToolInput",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/ListMcpResourcesToolInput",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/McpToolInput",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/NotebookEditToolInput",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/ReadMcpResourceToolInput",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/ReadToolInput",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/TaskOutputToolInput",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/TaskStopToolInput",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/TaskToolInput",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/TodoItem",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/TodoWriteToolInput",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/WebFetchToolInput",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/WebSearchToolInput",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Inputs/WriteToolInput"
+                                ]
+                              },
+                              {
+                                "group": "Responses",
+                                "icon": "folder-tree",
+                                "pages": [
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/index",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/AgentCacheCreationInfo",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/AgentContentBlock",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/AgentServerToolUseInfo",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/AgentToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/AgentUsageInfo",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/AskUserQuestionAnnotation",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/AskUserQuestionToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/AsyncLaunchedAgentToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/BashToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/CompletedAgentToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/ConfigToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/EditToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/EnterWorktreeToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/ExitPlanModeToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/ExitWorktreeToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/FileUnchangedReadToolFileInfo",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/FileUnchangedReadToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/GitDiffInfo",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/GlobToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/GrepToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/ImageDimensionInfo",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/ImageReadToolFileInfo",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/ImageReadToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/KillShellToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/ListMcpResourcesToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/McpResourceContent",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/McpResourceInfo",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/NotebookEditToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/NotebookReadToolFileInfo",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/NotebookReadToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/PartsReadToolFileInfo",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/PartsReadToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/PdfReadToolFileInfo",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/PdfReadToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/ReadMcpResourceToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/ReadToolFileInfo",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/ReadToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/StructuredPatchHunk",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/TaskStopToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/TaskToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/TextReadToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/TodoWriteToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/WebFetchToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/WebSearchResultContainer",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/WebSearchResultItem",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/WebSearchToolResponse",
+                                  "claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Tools/Responses/WriteToolResponse"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
         ]
       }
     ]
   },
   "$schema": "https://mintlify.com/docs.json",
+  "styling": {
+    "codeblocks": "dark"
+  },
   "theme": "maple"
 }

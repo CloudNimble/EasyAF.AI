@@ -1,0 +1,56 @@
+---
+title: Why EasyAF.AI?
+sidebarTitle: Why EasyAF.AI?
+description: Fast, standards-based, queryable AIs — without teaching the model to read EDMX
+icon: square-question
+---
+
+## The bet
+
+EasyAF exists so a .NET team can ship a real application without inventing a framework first. The APIs it produces are already standards: OData, REST, ordinary HTTP.
+
+Assistants do not speak those APIs fluently. Left alone, a model will download `$metadata`, burn thousands of tokens guessing at `Customers`, and still miss `$filter`. You pay for the round trips. The customer pays for the tokens. Nobody gets a good answer.
+
+EasyAF.AI is the other half of that bet. Keep the API. Give the assistant a **catalog** and a **protocol**.
+
+## Standards in, standards out
+
+<CardGroup cols={2}>
+  <Card title="OData stays OData" icon="code">
+    Filter, expand, page, and act over HTTP the way the service already does. MCP does not become a second query language.
+  </Card>
+  <Card title="MCP stays MCP" icon="plug">
+    Claude Desktop, Cursor, Claude Code, and any other MCP harness connect the same way. No vendor SDK in the assistant.
+  </Card>
+  <Card title="Catalog, not dump" icon="layer-group">
+    `$metadata` is for compilers. The assistant gets named tools, compact type cards, and a short list of rules.
+  </Card>
+  <Card title="Identity is a host concern" icon="user-lock">
+    A generic MCP server has more than one user. Tasks belong to the principal that created them. Stores persist that rule.
+  </Card>
+</CardGroup>
+
+## What the numbers look like
+
+OData `$metadata` is honest and huge. A compact catalog is the same service, described for a model:
+
+| Service | `$metadata` | Compact catalog | Token reduction |
+|---|---|---|---|
+| Northwind | 4,802 tokens | 654 tokens | 86.4% |
+| TripPin | 1,859 tokens | 91 tokens | 95.1% |
+
+That reduction is the product. Faster answers, smaller bills, fewer hallucinated entity sets.
+
+## Three libraries, one idea
+
+**[MCP Essentials](/mcpessentials)** is the hosting layer. The official MCP C# SDK's in-memory task store is process-wide. A remote server that more than one person uses needs one more rule: the user who started a task is the only one who can poll, update, or cancel it. Core ships that store. Entity Framework Core persists it on the database you already run.
+
+**[OData MCP](/odata-mcp)** is the queryable-AI layer. Local MCP is a small app on your machine that talks to any OData v4 service. Remote MCP is a NuGet package you put on the API you host, so customers point their harness at `https://your-api/odata/mcp`. Both share a catalog built from `$metadata`.
+
+**[ClaudeEssentials](/claudeessentials)** is the agent-runtime layer. Claude Code hooks are JSON over stdin/stdout. This library is the AOT-ready, source-generated model of every hook Claude can fire, so your policy is C# instead of hand-rolled JSON.
+
+Each tab is that project's own documentation. EasyAF.AI does not restate it. This site exists to show how they compose.
+
+## What you do not take on
+
+You do not teach the model OData. You do not paste CSV into the prompt. You do not stand up a second, AI-only API beside the one your apps already call. The assistant uses the same service, through a smaller door.
