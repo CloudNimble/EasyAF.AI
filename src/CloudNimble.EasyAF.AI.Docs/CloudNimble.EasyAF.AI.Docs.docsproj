@@ -25,18 +25,9 @@
             <Styling>
                 <Codeblocks>dark</Codeblocks>
             </Styling>
-            <Navigation Mode="Unified" Type="Tabs" Name="EasyAF.AI">
-                <Pages>
-                    <Groups>
-                        <Group Name="Getting Started" Icon="stars">
-                            <Pages>
-                                index;
-                                why-easyaf-ai;
-                                quickstart
-                            </Pages>
-                        </Group>
-                    </Groups>
-                </Pages>
+            <Navigation Mode="Unified">
+                <Tabs>
+                </Tabs>
             </Navigation>
             <Interaction>
                 <Drilldown>true</Drilldown>
