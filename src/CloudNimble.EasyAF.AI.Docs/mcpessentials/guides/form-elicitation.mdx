@@ -109,6 +109,26 @@ var result = await server.ElicitAsync(
 
 `Create(null)` and `From<T>(null)` throw `ArgumentNullException`. Whitespace messages are allowed at create and throw from `Build()`.
 
+## Compact XML
+
+`Build()` materializes SDK `ElicitRequestParams` and seals the field list. `ToInputRequest()` wraps that graph; `ToJson()` returns the JSON already on `InputRequest.Params`. `ToXml()` writes a compact `<Form>` island and caches it on the builder (named DI forms reuse that string). OData `$metadata` wraps the island in `Mcp.ElicitForm`. Adding a field after `Build` / `ToXml` / `ToJson` throws; the analyzer reports **MCPESS006**.
+
+```csharp
+var form = FormElicitation.Create("Ship this order")
+    .String("trackingNumber").Required();
+
+string xml = form.ToXml();
+var again = FormElicitation.ParseXml(xml);
+```
+
+Register a named form for hosts that resolve it like a named `HttpClient`:
+
+```csharp
+services.AddFormElicitation("ship", form);
+```
+
+The codec is handwritten `XmlWriter` / `XmlReader` (AOT-safe). See `specs/form-xml.md`.
+
 ## Field kinds
 
 Starters camelCase the name (`FirstName` → `firstName`) and Titleize the label (`TimeToLive` → `"Time To Live"`). `.Title(...)` overrides the label.
@@ -344,7 +364,11 @@ These fail at the fluent call or at `Build()` / `ElicitAsync` / `SetInputRequest
 An empty property list is legal. Nested property access in `Exclude` / expression starters (`x => x.Address.City`) throws `ArgumentException`.
 </Note>
 
-## API
+## Analyzers
+
+`McpEssentials.Core` ships Roslyn analyzers so a skipped property or a nested lambda is a compiler diagnostic instead of a missing field at runtime. The full ID list, suppressions, and before/after samples live in [Analyzers](/mcpessentials/guides/analyzers).
+
+## Related
 
 <CardGroup cols={2}>
   <Card title="FormElicitation" icon="bolt" href="/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/FormElicitation">
@@ -358,5 +382,11 @@ An empty property list is legal. Nested property access in `Exclude` / expressio
   </Card>
   <Card title="IMcpTaskStore" icon="box-archive" href="/mcpessentials/api-reference/ModelContextProtocol/Extensions/Tasks/IMcpTaskStore">
     `SetInputRequestsAsync(taskId, form)` when you park the form yourself.
+  </Card>
+  <Card title="Analyzers" icon="wand-magic-sparkles" href="/mcpessentials/guides/analyzers">
+    Compiler diagnostics for `From<T>`, colliding names, and invalid lambdas.
+  </Card>
+  <Card title="Authenticated tasks" icon="user-lock" href="/mcpessentials/guides/authenticated-tasks">
+    Park a form on a task. Isolation, identity, and samples.
   </Card>
 </CardGroup>
