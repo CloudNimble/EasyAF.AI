@@ -1,11 +1,11 @@
 ---
-title: Getting Started with EasyAF.AI
+title: Getting Started with EasyAF SI
 sidebarTitle: Quickstart
 description: Pick the library that matches what you are building
 icon: play
 ---
 
-EasyAF.AI is a collection, not a single NuGet package. Install the library that matches the job.
+EasyAF SI is a collection, not a single NuGet package. Install the library that matches the job. Each one works on its own.
 
 <Tabs>
   <Tab title="MCP server">
@@ -38,7 +38,7 @@ EasyAF.AI is a collection, not a single NuGet package. Install the library that 
     Full walkthrough: [Authenticated tasks](/mcpessentials/guides/authenticated-tasks) and [stores](/mcpessentials/guides/stores).
   </Tab>
   <Tab title="OData API">
-    An OData API you want an assistant to query. Start with [OData MCP](/odata-mcp).
+    An OData API you want an SI to query. Start with [OData MCP](/odata-mcp).
 
     **Remote MCP** — you host the API, customers connect their harness:
 
@@ -46,7 +46,7 @@ EasyAF.AI is a collection, not a single NuGet package. Install the library that 
     dotnet add package Microsoft.OData.Mcp.AspNetCore
     ```
 
-    **Local MCP** — a small app on your machine against any OData v4 service:
+    **Local MCP** — a small McMaster.Extensions.CommandLine app on your machine against any OData v4 service:
 
     ```bash
     dotnet tool install Microsoft.OData.Mcp --global
@@ -96,7 +96,7 @@ EasyAF.AI is a collection, not a single NuGet package. Install the library that 
 | You are building… | Start here |
 |---|---|
 | A multi-user MCP server | [MCP Essentials](/mcpessentials) |
-| Assistant access to a live OData API | [OData MCP](/odata-mcp) |
+| SI access to a live OData API | [OData MCP](/odata-mcp) |
 | Claude Code policy, context, or quality gates | [ClaudeEssentials](/claudeessentials) |
 
 They compose. A Remote MCP host can use McpEssentials for tasks. Claude Code can call that host. Each library's own docs take it from here.

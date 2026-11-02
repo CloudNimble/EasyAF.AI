@@ -10,19 +10,19 @@
   "interaction": {
     "drilldown": true
   },
-  "name": "EasyAF.AI",
+  "name": "EasyAF SI",
   "navigation": {
     "tabs": [
       {
-        "tab": "Build for AI",
+        "tab": "Build for SI",
         "pages": [
           {
             "group": "Getting Started",
             "icon": "stars",
             "pages": [
               "index",
-              "why-easyaf-ai",
-              "quickstart"
+              "quickstart",
+              "why-easyaf-si"
             ]
           }
         ]

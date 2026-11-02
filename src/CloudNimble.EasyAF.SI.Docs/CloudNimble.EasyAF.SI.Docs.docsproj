@@ -12,7 +12,7 @@
 
     <PropertyGroup>
         <MintlifyTemplate>
-            <Name>EasyAF.AI</Name>
+            <Name>EasyAF SI</Name>
             <Theme>maple</Theme>
             <Colors>
                 <Primary>#419AC5</Primary>
@@ -25,14 +25,14 @@
             <Styling>
                 <Codeblocks>dark</Codeblocks>
             </Styling>
-            <Navigation Mode="Unified" Type="Tabs" Name="Build for AI">
+            <Navigation Mode="Unified" Type="Tabs" Name="Build for SI">
                 <Pages>
                     <Groups>
                         <Group Name="Getting Started" Icon="stars">
                             <Pages>
                                 index;
-                                why-easyaf-ai;
-                                quickstart
+                                quickstart;
+                                why-easyaf-si
                             </Pages>
                         </Group>
                     </Groups>

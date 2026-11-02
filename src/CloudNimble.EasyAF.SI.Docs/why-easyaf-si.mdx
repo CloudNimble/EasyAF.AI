@@ -1,0 +1,84 @@
+---
+title: Why EasyAF SI?
+sidebarTitle: Why EasyAF SI?
+description: .NET is the most powerful and most performant way to build for SuperIntelligence
+icon: square-question
+---
+
+## The bet
+
+**Building for the SuperIntelligence is Easy As F\*\*\*!**
+
+EasyAF SI exists so you ship MCP servers, harness tools, and self-describing APIs in C# — with types, Native AOT, and the runtime you already run in production.
+
+The SI surface is exploding. Assistants need MCP servers. Agents need hooks. Operators need CLIs that watch deployed harnesses. Most of that work started in Python and TypeScript because those ecosystems shipped the first samples. EasyAF SI is how you ship the next ones on the platform that already owns your identity, your data, and your deploy pipeline.
+
+We want you to build **more MCP servers**, **more .NET-powered hooks**, and **more CLIs**. Then we want the result to prove that **.NET is the best and fastest platform** for SuperIntelligence tooling.
+
+## What we want you to ship
+
+<CardGroup cols={3}>
+  <Card title="MCP servers" icon="server" href="/mcpessentials">
+    Generic servers more than one user can share. Authenticated tasks, durable stores, forms the client can fill.
+  </Card>
+  <Card title=".NET hooks" icon="webhook" href="/claudeessentials">
+    Policy in C#. Claude Code talks JSON over stdin/stdout. You write types, not string templates.
+  </Card>
+  <Card title="CLIs" icon="terminal" href="/quickstart">
+    File-based apps, AOT natives, McMaster.Extensions.CommandLine. Tools that start in milliseconds.
+  </Card>
+</CardGroup>
+
+Python is a great notebook. TypeScript is a great UI. The SI control plane — servers, hooks, and CLIs that sit on your data, your identity, and your deploy pipeline — belongs on the runtime that already owns those things.
+
+## Why .NET wins this
+
+<CardGroup cols={2}>
+  <Card title="Near-native speed" icon="bolt">
+    Every library here is Native AOT optimized. Source-generated JSON, no reflection. A hook that cold-starts in milliseconds is a hook you can put on every tool call.
+  </Card>
+  <Card title="Fast to be right" icon="shield-check">
+    Compilers catch the schema. Analyzers catch the form. You find the break at `dotnet build`, not in a session with a customer watching.
+  </Card>
+  <Card title="One stack" icon="cubes">
+    The API, the MCP server, the hook, and the CLI share types, identity, and CI. No second language for the "AI sidecar."
+  </Card>
+  <Card title="Production already" icon="industry">
+    The same Kestrel, the same `ClaimsPrincipal`, the same EF Core, Redis, and Postgres you run today. SuperIntelligence uses that surface.
+  </Card>
+</CardGroup>
+
+## Three libraries, each on its own
+
+None of these packages depends on EasyAF core. Each one drops into the app you already have.
+
+**[MCP Essentials](/mcpessentials)** is how you host. The official MCP C# SDK's in-memory task store is process-wide. A remote server that more than one person uses needs one more rule: the user who started a task is the only one who can poll, update, or cancel it. Core ships that store. Entity Framework Core, Redis, Cosmos, and native Postgres persist it on the engine you already run.
+
+**[OData MCP](/odata-mcp)** is how an SI talks to a live API. Local MCP is a small McMaster.Extensions.CommandLine app on your machine that talks to any OData v4 service. Remote MCP is a NuGet package on the API you host. Both share a catalog built from `$metadata` — named tools and compact type cards, so the model spends tokens on the work.
+
+**[ClaudeEssentials](/claudeessentials)** is how you keep the agent honest in the repo. Claude Code hooks are JSON over stdin/stdout. This library is the AOT-ready, source-generated model of every hook Claude can fire. Your policy is C#.
+
+Each tab is that project's own documentation. This site exists to show how they compose, and to make the next MCP server, hook, or CLI the obvious thing to write in .NET.
+
+## Better Together
+
+Use them with the rest of the [EasyAF](https://easyaf.dev) platform and you get SuperIntelligent APIs: agents log in automatically, get your data for you, and execute tasks more effectively — faster than ever before.
+
+OData MCP already sits on MCP Essentials. Layer that on an EasyAF API and the assistant gets a compact catalog instead of a 4,000-token `$metadata` dump. Customers succeed more often. A flailing agent stops hammering every entity set trying to learn your shape.
+
+## Proof, not slogans
+
+OData `$metadata` is honest and huge. A compact catalog is the same service, described for a model:
+
+| Service | `$metadata` | Compact catalog | Token reduction |
+|---|---|---|---|
+| Northwind | 4,802 tokens | 654 tokens | 86.4% |
+| TripPin | 1,859 tokens | 91 tokens | 95.1% |
+
+That reduction is one product. The rest of the proof is operational: AOT hooks that start instantly, task stores that isolate users, CLIs that share the same types as the API. Faster answers, smaller bills, fewer hallucinated entity sets — and a stack you can actually deploy.
+
+## What you keep
+
+You keep the API. You keep OData, REST, and ordinary HTTP. You keep `ClaimsPrincipal` and the database you already run.
+
+The SI gets a **protocol** (MCP), a **catalog** (named tools, not a metadata dump), and a **host** that knows who the user is. You write more servers, more hooks, and more CLIs — in .NET.
