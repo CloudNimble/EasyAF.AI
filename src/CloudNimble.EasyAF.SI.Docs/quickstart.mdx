@@ -5,10 +5,10 @@ description: Pick the library that matches what you are building
 icon: play
 ---
 
-EasyAF SI is a collection, not a single NuGet package. Install the library that matches the job. Each one works on its own.
+EasyAF SuperIntelligence has different tools 
 
 <Tabs>
-  <Tab title="MCP server">
+  <Tab title="Building MCP Integrations">
     A generic MCP server that more than one user will call. Start with [MCP Essentials](/mcpessentials).
 
     ```bash
@@ -37,8 +37,8 @@ EasyAF SI is a collection, not a single NuGet package. Install the library that 
 
     Full walkthrough: [Authenticated tasks](/mcpessentials/guides/authenticated-tasks) and [stores](/mcpessentials/guides/stores).
   </Tab>
-  <Tab title="OData API">
-    An OData API you want an SI to query. Start with [OData MCP](/odata-mcp).
+  <Tab title="Microsoft OData for SuperIntelligence">
+    Automagically enables SuperIntelligence harnesses to interact with OData APIs. Start with [OData MCP](/odata-mcp).
 
     **Remote MCP** — you host the API, customers connect their harness:
 
@@ -46,7 +46,7 @@ EasyAF SI is a collection, not a single NuGet package. Install the library that 
     dotnet add package Microsoft.OData.Mcp.AspNetCore
     ```
 
-    **Local MCP** — a small McMaster.Extensions.CommandLine app on your machine against any OData v4 service:
+    **Local MCP** — Install a console-based app that talks to ANY OData v4 service:
 
     ```bash
     dotnet tool install Microsoft.OData.Mcp --global
@@ -56,8 +56,8 @@ EasyAF SI is a collection, not a single NuGet package. Install the library that 
 
     Full walkthrough: [Local MCP](/odata-mcp/guides/local) and [Remote MCP](/odata-mcp/guides/remote).
   </Tab>
-  <Tab title="Claude Code hooks">
-    A hook processor that intercepts Claude Code. Start with [ClaudeEssentials](/claudeessentials).
+  <Tab title="Hook Into Claude">
+    Utilities that let you hook into Claude operations. Start with [ClaudeEssentials](/claudeessentials).
 
     ```bash
     dotnet add package ClaudeEssentials
@@ -95,20 +95,20 @@ EasyAF SI is a collection, not a single NuGet package. Install the library that 
 
 | You are building… | Start here |
 |---|---|
-| A multi-user MCP server | [MCP Essentials](/mcpessentials) |
-| SI access to a live OData API | [OData MCP](/odata-mcp) |
-| Claude Code policy, context, or quality gates | [ClaudeEssentials](/claudeessentials) |
+| MCP Servers | [McpEssentials](/mcpessentials) |
+| OData APIs | [OData MCP](/odata-mcp) |
+| Claude policy, context, or quality gates | [ClaudeEssentials](/claudeessentials) |
 
 They compose. A Remote MCP host can use McpEssentials for tasks. Claude Code can call that host. Each library's own docs take it from here.
 
 ## Next
 
 <CardGroup cols={3}>
-  <Card title="MCP Essentials" icon="server" href="/mcpessentials">
+  <Card title="McpEssentials" icon="server" href="/mcpessentials">
     Authenticated tasks and stores
   </Card>
-  <Card title="OData MCP" icon="database" href="/odata-mcp">
-    Local MCP and Remote MCP
+  <Card title="Microsoft OData for SI" icon="database" href="/odata-mcp">
+    Local & remote OData MCP servers
   </Card>
   <Card title="ClaudeEssentials" icon="webhook" href="/claudeessentials">
     Hook models and serialization
