@@ -1,4 +1,4 @@
-<Project Sdk="DotNetDocs.Sdk/1.5.5-preview.1">
+<Project Sdk="DotNetDocs.Sdk/1.5.5-preview.3">
 
     <PropertyGroup>
         <DocumentationType>Mintlify</DocumentationType>
@@ -39,7 +39,7 @@
                 </Pages>
                 <Tabs>
                     <!-- Href-only; moved to the end after DocumentationReference tabs are appended. -->
-                    <Tab Name="Core Framework" Href="https://easyaf.dev" />
+                    <Tab Name="Core Framework" Href="https://easyaf.dev" Position="End" />
                 </Tabs>
             </Navigation>
             <Interaction>
@@ -55,15 +55,5 @@
 
         <DocumentationReference Include="..\..\external\ClaudeEssentials\src\CloudNimble.ClaudeEssentials.Docs\CloudNimble.ClaudeEssentials.Docs.docsproj" DestinationPath="claudeessentials" IntegrationType="Tabs" Name="ClaudeEssentials" />
     </ItemGroup>
-
-    <!--
-      The Core Framework href tab is declared in the template so the URL lives in
-      Navigation XML, but template tabs are emitted first. Move it last and drop
-      the empty pages array ParseTabConfig writes onto href-only tabs.
-    -->
-    <Target Name="MoveCoreFrameworkTabToEnd" AfterTargets="GenerateDocumentation">
-        <Message Text="🔗 Moving Core Framework tab to the end of navigation" Importance="high" />
-        <Exec Command="dotnet &quot;$(MSBuildThisFileDirectory)..\..\tools\MoveCoreFrameworkTabToEnd.cs&quot; -- &quot;$(MSBuildProjectDirectory)\docs.json&quot;" />
-    </Target>
 
 </Project>
