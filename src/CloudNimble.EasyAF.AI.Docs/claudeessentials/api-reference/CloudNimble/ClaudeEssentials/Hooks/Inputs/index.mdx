@@ -3,7 +3,7 @@ title: Overview
 description: "Summary of the CloudNimble.ClaudeEssentials.Hooks.Inputs Namespace"
 icon: folder-tree
 mode: wide
-keywords: ['CloudNimble.ClaudeEssentials.Hooks.Inputs', 'namespace', 'HookInputBase', 'ToolHookInputBase', 'NotificationHookInput', 'PermissionRequestHookInput', 'PostToolUseHookInput', 'PreCompactHookInput', 'PreToolUseHookInput', 'SessionEndHookInput', 'SessionStartHookInput', 'StopHookInput']
+keywords: ['CloudNimble.ClaudeEssentials.Hooks.Inputs', 'namespace', 'BackgroundTaskSummary', 'HookInputBase', 'ModelSwitchHookInputBase', 'ToolHookInputBase', 'ConfigChangeHookInput', 'CwdChangedHookInput', 'DirectoryAddedHookInput', 'ElicitationHookInput', 'ElicitationResultHookInput', 'FileChangedHookInput']
 ---
 
 ## Summary
@@ -60,16 +60,45 @@ All inputs include these properties from `HookInputBase`:
 
 | Name | Summary |
 | ---- | ------- |
+| [BackgroundTaskSummary](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/BackgroundTaskSummary) | Represents in-flight background work registered in a session. |
 | [HookInputBase](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/HookInputBase) | Base class containing common fields present in all hook inputs.  All hooks receive these fields via JSON through stdin. |
+| [ModelSwitchHookInputBase](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/ModelSwitchHookInputBase) | Base class for the inputs received by hooks that run around a model switch. |
 | [ToolHookInputBase](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/ToolHookInputBase) | Base class for tool-related hook inputs that contain tool name, input, and use ID.  Used as a base for PreToolUse and PostToolUse hook inputs. |
+| [ConfigChangeHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/ConfigChangeHookInput) | Represents the input received by a ConfigChange hook.  This hook runs when a configuration setting changes. |
+| [CwdChangedHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/CwdChangedHookInput) | Represents the input received by a CwdChanged hook.  This hook runs when the current working directory changes. |
+| [DirectoryAddedHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/DirectoryAddedHookInput) | Represents the input received by a DirectoryAdded hook, which runs when a directory is added to the session. |
+| [ElicitationHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/ElicitationHookInput) | Represents the input received by an Elicitation hook.  This hook runs when an elicitation dialog is presented to the user. |
+| [ElicitationResultHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/ElicitationResultHookInput) | Represents the input received by an ElicitationResult hook.  This hook runs when the user responds to an elicitation dialog. |
+| [FileChangedHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/FileChangedHookInput) | Represents the input received by a FileChanged hook.  This hook runs when a file is changed externally. |
+| [HookEffortInfo](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/HookEffortInfo) | Represents the reasoning effort applied to the current turn. |
+| [InstructionsLoadedHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/InstructionsLoadedHookInput) | Represents the input received by an InstructionsLoaded hook.  This hook runs when instructions (CLAUDE.md files, etc.) are loaded. |
+| [McpServerProvenance](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/McpServerProvenance) | Represents the MCP server that provides a tool. |
+| [MessageDisplayHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/MessageDisplayHookInput) | Represents the input received by a MessageDisplay hook, which runs as assistant message text is displayed. |
 | [NotificationHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/NotificationHookInput) | Represents the input received by a Notification hook.  This hook runs when Claude Code sends notifications. |
+| [PermissionDeniedHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/PermissionDeniedHookInput) | Represents the input received by a PermissionDenied hook.  This hook runs when a permission request is denied. |
 | [PermissionRequestHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/PermissionRequestHookInput) | Represents the input received by a PermissionRequest hook.  This hook runs when a permission dialog is shown and can automatically allow or deny permissions. |
+| [PostCompactHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/PostCompactHookInput) | Represents the input received by a PostCompact hook.  This hook runs after a compact operation completes. |
+| [PostModelSwitchHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/PostModelSwitchHookInput) | Represents the input received by a PostModelSwitch hook, which runs after the session switches models. |
+| [PostToolBatchHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/PostToolBatchHookInput) | Represents the input received by a PostToolBatch hook, which runs once after every tool call in a batch has resolved. |
+| [PostToolBatchToolCall](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/PostToolBatchToolCall) | Represents one tool call in a resolved batch. |
+| [PostToolUseFailureHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/PostToolUseFailureHookInput) | Represents the input received by a PostToolUseFailure hook.  This hook runs after a tool call fails. |
 | [PostToolUseHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/PostToolUseHookInput) | Represents the input received by a PostToolUse hook.  This hook runs after tool calls complete and includes the tool's response. |
 | [PreCompactHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/PreCompactHookInput) | Represents the input received by a PreCompact hook.  This hook runs before a compact operation. |
+| [PreModelSwitchHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/PreModelSwitchHookInput) | Represents the input received by a PreModelSwitch hook, which runs before the session switches models. |
 | [PreToolUseHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/PreToolUseHookInput) | Represents the input received by a PreToolUse hook.  This hook runs before tool calls are executed and can block or modify them. |
+| [SessionCronSummary](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/SessionCronSummary) | Represents a session-scoped cron task that will wake a session later. |
 | [SessionEndHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/SessionEndHookInput) | Represents the input received by a SessionEnd hook.  This hook runs when a Claude Code session ends. |
 | [SessionStartHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/SessionStartHookInput) | Represents the input received by a SessionStart hook.  This hook runs when Claude Code starts a new session or resumes one. |
+| [SetupHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/SetupHookInput) | Represents the input received by a Setup hook, which runs during repository setup or maintenance. |
+| [StopFailureHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/StopFailureHookInput) | Represents the input received by a StopFailure hook.  This hook runs when a stop hook itself fails. |
 | [StopHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/StopHookInput) | Represents the input received by a Stop hook.  This hook runs when Claude Code finishes responding. |
+| [SubagentStartHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/SubagentStartHookInput) | Represents the input received by a SubagentStart hook.  This hook runs when a subagent task starts. |
 | [SubagentStopHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/SubagentStopHookInput) | Represents the input received by a SubagentStop hook.  This hook runs when subagent tasks complete. |
+| [TaskCompletedHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/TaskCompletedHookInput) | Represents the input received by a TaskCompleted hook.  This hook runs when a task completes. |
+| [TaskCreatedHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/TaskCreatedHookInput) | Represents the input received by a TaskCreated hook.  This hook runs when a task is created. |
+| [TeammateIdleHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/TeammateIdleHookInput) | Represents the input received by a TeammateIdle hook.  This hook runs when a teammate agent becomes idle. |
+| [UserPromptExpansionHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/UserPromptExpansionHookInput) | Represents the input received by a UserPromptExpansion hook, which runs when a slash command or MCP prompt expands into a prompt. |
 | [UserPromptSubmitHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/UserPromptSubmitHookInput) | Represents the input received by a UserPromptSubmit hook.  This hook runs when the user submits a prompt, before Claude processes it. |
+| [WorktreeCreateHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/WorktreeCreateHookInput) | Represents the input received by a WorktreeCreate hook.  This hook runs when a git worktree is created. |
+| [WorktreeRemoveHookInput](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Inputs/WorktreeRemoveHookInput) | Represents the input received by a WorktreeRemove hook.  This hook runs when a git worktree is removed. |
 

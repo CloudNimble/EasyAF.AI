@@ -3,7 +3,7 @@ title: Overview
 description: "Summary of the CloudNimble.ClaudeEssentials.Hooks Namespace"
 icon: folder-tree
 mode: wide
-keywords: ['CloudNimble.ClaudeEssentials.Hooks', 'namespace', 'ClaudeHooksJsonContext', 'ClaudeHooksSerializer', 'ClaudeModel', 'CompactTrigger', 'ConfigOperation', 'ContentBlockType', 'GitDiffStatus', 'GrepOutputMode', 'HookDecision', 'HookEventName']
+keywords: ['CloudNimble.ClaudeEssentials.Hooks', 'namespace', 'ClaudeHooksSerializer', 'AgentIsolationMode', 'ArtifactAction', 'ArtifactAssetUploadStatus', 'ArtifactListScope', 'ArtifactPinAction', 'ArtifactRelationship', 'ArtifactRole', 'ArtifactWatchRail', 'AskUserQuestionUnansweredReason']
 ---
 
 ## Summary
@@ -110,26 +110,69 @@ Console.WriteLine(ClaudeHooksSerializer.SerializeStopOutput(output));
 
 | Name | Summary |
 | ---- | ------- |
-| [ClaudeHooksJsonContext](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ClaudeHooksJsonContext) | Provides AOT-compatible JSON serialization context for Claude Code hook types.  This context uses source generators to pre-compile serialization code,  eliminating the need for runtime reflection. |
-| [ClaudeHooksSerializer](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ClaudeHooksSerializer) | Provides static helper methods for serializing and deserializing Claude Code hook types.  All methods use the AOT-compatible [ClaudeHooksJsonContext](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ClaudeHooksJsonContext) for serialization. |
+| [ClaudeHooksSerializer](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ClaudeHooksSerializer) | Provides static helper methods for serializing and deserializing Claude Code hook types.  All methods use the AOT-compatible `ClaudeHooksJsonContext` for serialization. |
+| [AgentIsolationMode](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/AgentIsolationMode) | Represents the isolation mode used when spawning an agent. |
+| [ArtifactAction](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ArtifactAction) | Represents the action performed by the Artifact tool. |
+| [ArtifactAssetUploadStatus](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ArtifactAssetUploadStatus) | Represents the outcome of uploading one file to an artifact's asset store. |
+| [ArtifactListScope](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ArtifactListScope) | Represents which artifacts a list operation covers. |
+| [ArtifactPinAction](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ArtifactPinAction) | Represents the pin operation that was performed on an artifact. |
+| [ArtifactRelationship](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ArtifactRelationship) | Represents how a listed artifact relates to the user. |
+| [ArtifactRole](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ArtifactRole) | Represents the role the user holds on a shared artifact. |
+| [ArtifactWatchRail](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ArtifactWatchRail) | Represents a non-live delivery state of an artifact watch. |
+| [AskUserQuestionUnansweredReason](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/AskUserQuestionUnansweredReason) | Represents how a question asked through the AskUserQuestion tool went unanswered. |
 | [ClaudeModel](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ClaudeModel) | Represents the Claude model family used in a session or tool invocation. |
 | [CompactTrigger](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/CompactTrigger) | Represents what triggered a compact operation. |
-| [ConfigOperation](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ConfigOperation) | Represents the type of operation performed on a Claude Code configuration entry. |
+| [ConfigSource](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ConfigSource) | Represents the source of a Claude Code configuration change. |
 | [ContentBlockType](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ContentBlockType) | Represents the type of a content block within a Claude message or response. |
+| [DirectoryAddedSource](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/DirectoryAddedSource) | Represents how a directory was added to a session. |
+| [ElicitationAction](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ElicitationAction) | Represents the action to take for an elicitation dialog response. |
+| [ElicitationMode](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ElicitationMode) | Represents how an MCP elicitation collects input. |
+| [FeedbackFailureMode](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/FeedbackFailureMode) | Represents the closest failure mode for feedback about model behavior. |
+| [FeedbackTaskCategory](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/FeedbackTaskCategory) | Represents the kind of task a session was doing when feedback was submitted. |
+| [FeedbackType](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/FeedbackType) | Represents the kind of feedback submitted through the SendFeedback tool. |
+| [FileChangeEvent](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/FileChangeEvent) | Represents the kind of change detected on a watched file. |
+| [FileUnchangedSource](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/FileUnchangedSource) | Represents why the Read tool reported a file as unchanged without a prior Read result. |
+| [GitBranchAction](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/GitBranchAction) | Represents a branch-integration operation detected by the Bash tool. |
+| [GitCommitKind](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/GitCommitKind) | Represents how a commit detected by the Bash tool was produced. |
 | [GitDiffStatus](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/GitDiffStatus) | Represents the diff status of a file in a git operation. |
+| [GitPullRequestAction](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/GitPullRequestAction) | Represents a pull request operation detected by the Bash tool. |
 | [GrepOutputMode](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/GrepOutputMode) | Represents the output mode for grep search results. [GrepOutputMode.FilesWithMatches](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/GrepOutputMode#fileswithmatches) is the default. |
-| [HookDecision](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/HookDecision) | Represents a hook's decision to block an operation. |
-| [HookEventName](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/HookEventName) | Represents the different types of hook events that can be triggered in Claude Code. |
+| [HookDecision](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/HookDecision) | Represents the top-level decision a hook returns. |
+| [HookEventName](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/HookEventName) | Represents the hook event names that Claude Code can trigger. |
+| [ImageMediaType](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ImageMediaType) | Represents the MIME type of an image returned by the Read tool. |
+| [InstructionsLoadReason](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/InstructionsLoadReason) | Represents the reason why an instruction file was loaded in Claude Code. |
+| [MemoryType](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/MemoryType) | Represents the type of instruction memory file loaded in Claude Code. |
+| [ModelSwitchPricing](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ModelSwitchPricing) | Represents where the cost estimate for a model switch came from. |
+| [ModelSwitchSource](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ModelSwitchSource) | Represents what initiated a model switch. |
 | [NotebookCellType](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/NotebookCellType) | Represents the type of a cell within a Jupyter notebook. |
 | [NotebookEditMode](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/NotebookEditMode) | Represents the edit operation mode applied to a Jupyter notebook cell. |
-| [NotificationType](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/NotificationType) | Represents the type of notification sent by Claude Code. |
-| [PermissionDecision](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PermissionDecision) | Represents the decision for a PreToolUse permission check. |
+| [OfferChromeSetupOutcome](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/OfferChromeSetupOutcome) | Represents the outcome of offering Chrome setup to the user. |
+| [PermissionBehavior](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PermissionBehavior) | Represents the behavior of a permission rule. |
+| [PermissionDecision](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PermissionDecision) | Represents a permission decision returned by a PreToolUse or PreModelSwitch hook. |
 | [PermissionMode](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PermissionMode) | Represents the permission mode under which Claude Code is operating. |
 | [PermissionRequestBehavior](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PermissionRequestBehavior) | Represents the behavior decision for a PermissionRequest hook. |
-| [SessionEndReason](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/SessionEndReason) | Represents the reason why a session ended. |
-| [SessionStartSource](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/SessionStartSource) | Represents the source that triggered a session start event. |
-| [TaskExecutionStatus](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/TaskExecutionStatus) | Represents the execution status of a Claude Code task. Named `TaskExecutionStatus` to avoid  collision with [TaskStatus](https://learn.microsoft.com/dotnet/api/system.threading.tasks.taskstatus). |
+| [PermissionUpdateDestination](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PermissionUpdateDestination) | Represents where a permission update is saved. |
+| [ProjectsMethod](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ProjectsMethod) | Represents the operation performed by the Projects tool. |
+| [PromptCacheTtl](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PromptCacheTtl) | Represents the time to live of the prompt cache. |
+| [PromptExpansionType](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PromptExpansionType) | Represents the kind of prompt expansion. |
+| [PushNotificationDisabledReason](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PushNotificationDisabledReason) | Represents why a push notification was not delivered. |
+| [PushNotificationStatus](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PushNotificationStatus) | Represents the status of a notification sent through the PushNotification tool. |
+| [ReasoningEffort](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ReasoningEffort) | Represents the reasoning effort level of an agent or review. |
+| [RefreshMcpToolsStatus](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/RefreshMcpToolsStatus) | Represents the outcome of refreshing the tool list of an MCP server. |
+| [RemoteTriggerAction](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/RemoteTriggerAction) | Represents the action performed by the RemoteTrigger tool. |
+| [ReviewFindingOutcome](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ReviewFindingOutcome) | Represents what happened to a code review finding when fixes were applied. |
+| [ReviewFindingVerdict](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ReviewFindingVerdict) | Represents the result of a verification pass over a code review finding. |
+| [SessionEndReason](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/SessionEndReason) | Represents why a session ended. |
+| [SessionStartSource](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/SessionStartSource) | Represents how a session started. |
+| [SetupTrigger](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/SetupTrigger) | Represents what triggered a Setup hook. |
+| [SkillProposalKind](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/SkillProposalKind) | Represents whether a proposed skill is new or improves an existing one. |
+| [StopFailureErrorType](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/StopFailureErrorType) | Represents the API error that ended a turn. |
+| [TaskItemStatus](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/TaskItemStatus) | Represents the status of a task tracked by the task tools. |
+| [TaskUpdateStatus](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/TaskUpdateStatus) | Represents the status a task can be moved to by the TaskUpdate tool. |
 | [TodoItemStatus](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/TodoItemStatus) | Represents the status of a to-do item tracked by Claude Code. |
+| [UserPromptSource](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/UserPromptSource) | Represents who authored or injected a prompt. |
+| [WorkflowLaunchStatus](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/WorkflowLaunchStatus) | Represents how a workflow was launched. |
+| [WorkflowTaskType](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/WorkflowTaskType) | Represents the type of background task registered for a workflow. |
 | [WorktreeAction](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/WorktreeAction) | Represents the action to take when exiting a git worktree. |
 | [WriteOperationType](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/WriteOperationType) | Represents the type of write operation performed on a file. |
 
@@ -137,24 +180,68 @@ Console.WriteLine(ClaudeHooksSerializer.SerializeStopOutput(output));
 
 | Name | Summary |
 | ---- | ------- |
+| [AgentIsolationMode](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/AgentIsolationMode) | Represents the isolation mode used when spawning an agent. |
+| [ArtifactAction](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ArtifactAction) | Represents the action performed by the Artifact tool. |
+| [ArtifactAssetUploadStatus](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ArtifactAssetUploadStatus) | Represents the outcome of uploading one file to an artifact's asset store. |
+| [ArtifactListScope](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ArtifactListScope) | Represents which artifacts a list operation covers. |
+| [ArtifactPinAction](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ArtifactPinAction) | Represents the pin operation that was performed on an artifact. |
+| [ArtifactRelationship](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ArtifactRelationship) | Represents how a listed artifact relates to the user. |
+| [ArtifactRole](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ArtifactRole) | Represents the role the user holds on a shared artifact. |
+| [ArtifactWatchRail](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ArtifactWatchRail) | Represents a non-live delivery state of an artifact watch. |
+| [AskUserQuestionUnansweredReason](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/AskUserQuestionUnansweredReason) | Represents how a question asked through the AskUserQuestion tool went unanswered. |
 | [ClaudeModel](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ClaudeModel) | Represents the Claude model family used in a session or tool invocation. |
 | [CompactTrigger](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/CompactTrigger) | Represents what triggered a compact operation. |
-| [ConfigOperation](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ConfigOperation) | Represents the type of operation performed on a Claude Code configuration entry. |
+| [ConfigSource](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ConfigSource) | Represents the source of a Claude Code configuration change. |
 | [ContentBlockType](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ContentBlockType) | Represents the type of a content block within a Claude message or response. |
+| [DirectoryAddedSource](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/DirectoryAddedSource) | Represents how a directory was added to a session. |
+| [ElicitationAction](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ElicitationAction) | Represents the action to take for an elicitation dialog response. |
+| [ElicitationMode](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ElicitationMode) | Represents how an MCP elicitation collects input. |
+| [FeedbackFailureMode](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/FeedbackFailureMode) | Represents the closest failure mode for feedback about model behavior. |
+| [FeedbackTaskCategory](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/FeedbackTaskCategory) | Represents the kind of task a session was doing when feedback was submitted. |
+| [FeedbackType](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/FeedbackType) | Represents the kind of feedback submitted through the SendFeedback tool. |
+| [FileChangeEvent](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/FileChangeEvent) | Represents the kind of change detected on a watched file. |
+| [FileUnchangedSource](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/FileUnchangedSource) | Represents why the Read tool reported a file as unchanged without a prior Read result. |
+| [GitBranchAction](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/GitBranchAction) | Represents a branch-integration operation detected by the Bash tool. |
+| [GitCommitKind](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/GitCommitKind) | Represents how a commit detected by the Bash tool was produced. |
 | [GitDiffStatus](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/GitDiffStatus) | Represents the diff status of a file in a git operation. |
+| [GitPullRequestAction](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/GitPullRequestAction) | Represents a pull request operation detected by the Bash tool. |
 | [GrepOutputMode](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/GrepOutputMode) | Represents the output mode for grep search results. [GrepOutputMode.FilesWithMatches](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/GrepOutputMode#fileswithmatches) is the default. |
-| [HookDecision](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/HookDecision) | Represents a hook's decision to block an operation. |
-| [HookEventName](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/HookEventName) | Represents the different types of hook events that can be triggered in Claude Code. |
+| [HookDecision](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/HookDecision) | Represents the top-level decision a hook returns. |
+| [HookEventName](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/HookEventName) | Represents the hook event names that Claude Code can trigger. |
+| [ImageMediaType](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ImageMediaType) | Represents the MIME type of an image returned by the Read tool. |
+| [InstructionsLoadReason](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/InstructionsLoadReason) | Represents the reason why an instruction file was loaded in Claude Code. |
+| [MemoryType](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/MemoryType) | Represents the type of instruction memory file loaded in Claude Code. |
+| [ModelSwitchPricing](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ModelSwitchPricing) | Represents where the cost estimate for a model switch came from. |
+| [ModelSwitchSource](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ModelSwitchSource) | Represents what initiated a model switch. |
 | [NotebookCellType](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/NotebookCellType) | Represents the type of a cell within a Jupyter notebook. |
 | [NotebookEditMode](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/NotebookEditMode) | Represents the edit operation mode applied to a Jupyter notebook cell. |
-| [NotificationType](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/NotificationType) | Represents the type of notification sent by Claude Code. |
-| [PermissionDecision](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PermissionDecision) | Represents the decision for a PreToolUse permission check. |
+| [OfferChromeSetupOutcome](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/OfferChromeSetupOutcome) | Represents the outcome of offering Chrome setup to the user. |
+| [PermissionBehavior](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PermissionBehavior) | Represents the behavior of a permission rule. |
+| [PermissionDecision](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PermissionDecision) | Represents a permission decision returned by a PreToolUse or PreModelSwitch hook. |
 | [PermissionMode](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PermissionMode) | Represents the permission mode under which Claude Code is operating. |
 | [PermissionRequestBehavior](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PermissionRequestBehavior) | Represents the behavior decision for a PermissionRequest hook. |
-| [SessionEndReason](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/SessionEndReason) | Represents the reason why a session ended. |
-| [SessionStartSource](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/SessionStartSource) | Represents the source that triggered a session start event. |
-| [TaskExecutionStatus](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/TaskExecutionStatus) | Represents the execution status of a Claude Code task. Named `TaskExecutionStatus` to avoid  collision with [TaskStatus](https://learn.microsoft.com/dotnet/api/system.threading.tasks.taskstatus). |
+| [PermissionUpdateDestination](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PermissionUpdateDestination) | Represents where a permission update is saved. |
+| [ProjectsMethod](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ProjectsMethod) | Represents the operation performed by the Projects tool. |
+| [PromptCacheTtl](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PromptCacheTtl) | Represents the time to live of the prompt cache. |
+| [PromptExpansionType](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PromptExpansionType) | Represents the kind of prompt expansion. |
+| [PushNotificationDisabledReason](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PushNotificationDisabledReason) | Represents why a push notification was not delivered. |
+| [PushNotificationStatus](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/PushNotificationStatus) | Represents the status of a notification sent through the PushNotification tool. |
+| [ReasoningEffort](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ReasoningEffort) | Represents the reasoning effort level of an agent or review. |
+| [RefreshMcpToolsStatus](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/RefreshMcpToolsStatus) | Represents the outcome of refreshing the tool list of an MCP server. |
+| [RemoteTriggerAction](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/RemoteTriggerAction) | Represents the action performed by the RemoteTrigger tool. |
+| [ReviewFindingOutcome](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ReviewFindingOutcome) | Represents what happened to a code review finding when fixes were applied. |
+| [ReviewFindingVerdict](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/ReviewFindingVerdict) | Represents the result of a verification pass over a code review finding. |
+| [SessionEndReason](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/SessionEndReason) | Represents why a session ended. |
+| [SessionStartSource](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/SessionStartSource) | Represents how a session started. |
+| [SetupTrigger](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/SetupTrigger) | Represents what triggered a Setup hook. |
+| [SkillProposalKind](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/SkillProposalKind) | Represents whether a proposed skill is new or improves an existing one. |
+| [StopFailureErrorType](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/StopFailureErrorType) | Represents the API error that ended a turn. |
+| [TaskItemStatus](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/TaskItemStatus) | Represents the status of a task tracked by the task tools. |
+| [TaskUpdateStatus](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/TaskUpdateStatus) | Represents the status a task can be moved to by the TaskUpdate tool. |
 | [TodoItemStatus](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/TodoItemStatus) | Represents the status of a to-do item tracked by Claude Code. |
+| [UserPromptSource](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/UserPromptSource) | Represents who authored or injected a prompt. |
+| [WorkflowLaunchStatus](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/WorkflowLaunchStatus) | Represents how a workflow was launched. |
+| [WorkflowTaskType](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/WorkflowTaskType) | Represents the type of background task registered for a workflow. |
 | [WorktreeAction](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/WorktreeAction) | Represents the action to take when exiting a git worktree. |
 | [WriteOperationType](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/WriteOperationType) | Represents the type of write operation performed on a file. |
 

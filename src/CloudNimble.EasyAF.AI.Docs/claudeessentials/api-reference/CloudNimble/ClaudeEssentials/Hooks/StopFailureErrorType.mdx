@@ -1,0 +1,44 @@
+---
+title: StopFailureErrorType
+description: "Represents the API error that ended a turn."
+icon: list-ol
+tag: "ENUM"
+keywords: ['StopFailureErrorType', 'CloudNimble.ClaudeEssentials.Hooks.StopFailureErrorType', 'CloudNimble.ClaudeEssentials.Hooks', 'class', 'System.Enum']
+---
+
+## Definition
+
+**Assembly:** CloudNimble.ClaudeEssentials.dll
+
+**Namespace:** CloudNimble.ClaudeEssentials.Hooks
+
+**Inheritance:** System.Enum
+
+## Syntax
+
+```csharp
+CloudNimble.ClaudeEssentials.Hooks.StopFailureErrorType
+```
+
+## Summary
+
+Represents the API error that ended a turn.
+
+## Values
+
+| Name | Value | Description |
+|------|-------|-------------|
+| `AuthenticationFailed` | 0 | Authentication failed. |
+| `OauthOrgNotAllowed` | 1 | The OAuth organization is not allowed. |
+| `AccountOnHold` | 2 | The account is on hold. |
+| `VerificationRequired` | 3 | Verification is required. |
+| `BillingError` | 4 | A billing error occurred. |
+| `RateLimit` | 5 | The request was rate limited. |
+| `Overloaded` | 6 | The API is overloaded. |
+| `InvalidRequest` | 7 | The request was invalid. |
+| `ModelNotFound` | 8 | The model was not found. |
+| `ServerError` | 9 | A server error occurred. |
+| `Unknown` | 10 | An unknown error occurred. |
+| `MaxOutputTokens` | 11 | The response reached the maximum output tokens. |
+| `CloudCredentialError` | 12 | A cloud credential error occurred. |
+
