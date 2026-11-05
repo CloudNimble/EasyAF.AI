@@ -42,7 +42,6 @@
           },
           {
             "group": "Guides",
-            "root": "mcpessentials/guides/index",
             "icon": "dog-leashed",
             "pages": [
               "mcpessentials/guides/index",
@@ -51,7 +50,6 @@
               "mcpessentials/guides/analyzers",
               {
                 "group": "Stores",
-                "root": "mcpessentials/guides/stores/index",
                 "icon": "database",
                 "pages": [
                   "mcpessentials/guides/stores/index",
@@ -122,7 +120,6 @@
                               "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/IMcpTaskStorePlus",
                               "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/InMemoryMcpTaskStorePlus",
                               "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/McpTaskInputSignal",
-                              "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/McpTasksJsonContext",
                               "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/McpTaskStoreBase",
                               "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/McpTaskStoreBuilder",
                               "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/McpTaskStoreOptions",
@@ -169,7 +166,6 @@
                             "icon": "folder-tree",
                             "pages": [
                               "mcpessentials/api-reference/CloudNimble/McpEssentials/Cosmos/Tasks/index",
-                              "mcpessentials/api-reference/CloudNimble/McpEssentials/Cosmos/Tasks/CosmosMcpTasksJsonContext",
                               "mcpessentials/api-reference/CloudNimble/McpEssentials/Cosmos/Tasks/CosmosMcpTaskStore",
                               "mcpessentials/api-reference/CloudNimble/McpEssentials/Cosmos/Tasks/CosmosMcpTaskStoreOptions",
                               "mcpessentials/api-reference/CloudNimble/McpEssentials/Cosmos/Tasks/CosmosStoredMcpTask",
@@ -221,7 +217,6 @@
                             "icon": "folder-tree",
                             "pages": [
                               "mcpessentials/api-reference/CloudNimble/McpEssentials/Redis/Tasks/index",
-                              "mcpessentials/api-reference/CloudNimble/McpEssentials/Redis/Tasks/RedisMcpTasksJsonContext",
                               "mcpessentials/api-reference/CloudNimble/McpEssentials/Redis/Tasks/RedisMcpTaskStore",
                               "mcpessentials/api-reference/CloudNimble/McpEssentials/Redis/Tasks/RedisMcpTaskStoreOptions",
                               "mcpessentials/api-reference/CloudNimble/McpEssentials/Redis/Tasks/RedisStoredMcpTask"
