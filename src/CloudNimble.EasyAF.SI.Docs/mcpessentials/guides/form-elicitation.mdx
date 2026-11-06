@@ -1,23 +1,71 @@
 ---
 title: "Form elicitation"
-description: "Build MCP form schemas fluently, send them with ElicitAsync, and park them on a task."
+description: "Author a form with FormElicitationBuilder, register it, and read ElicitResult.Content from RequireForm."
 icon: "clipboard-list"
-keywords: ["FormElicitation", "ElicitAsync", "IFormElicitationSource", "InputRequest", "Bind"]
+keywords:
+  - FormElicitationBuilder
+  - AddFormElicitation
+  - McpElicitForm
+  - RequireForm
+  - From
+  - IFormElicitationSource
 ---
 
-MCP form elicitation asks the client for a **flat object of primitives**. [`FormElicitation`](/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/FormElicitation) builds that schema. [`server.ElicitAsync(form)`](/mcpessentials/api-reference/ModelContextProtocol/Server/McpServer) sends it. When the tool is running as an MCP task, the SDK interceptor parks the form on the task for you.
+Build the schema once at startup with [`FormElicitationBuilder`](/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/FormElicitationBuilder), register it with [`AddFormElicitation`](/mcpessentials/api-reference/Microsoft/Extensions/DependencyInjection/IServiceCollection), stamp the tool with `[McpElicitForm("ship")]`, and call `context.RequireForm("ship")`.
 
-<CardGroup cols={3}>
-  <Card title="Field by field" icon="keyboard">
-    `Create` plus named starters. Best when the shape comes from metadata.
+The two-POST retry, headers, and `_meta` live in [Understanding form elicitation](/mcpessentials/guides/understanding-form-elicitation).
+
+<Columns cols={3}>
+  <Card title="Register at startup" icon="bookmark">
+    `AddFormElicitation("ship", form)` is a keyed singleton.
   </Card>
-  <Card title="From a CLR type" icon="cube">
-    `From<T>()` seeds public properties. Customize, then `Exclude`.
+  <Card title="Stamp the tool" icon="tag">
+    `[McpElicitForm("ship")]` keeps the call on `tools/call` when Tasks is registered.
   </Card>
-  <Card title="Inside a task" icon="hourglass-half">
-    `await server.ElicitAsync(form)` is enough. Do not call the store yourself.
+  <Card title="RequireForm" icon="paper-plane">
+    `context.RequireForm("ship")` returns `ElicitResult`. Typed: `RequireForm<ProductQuery>("query")`.
   </Card>
-</CardGroup>
+</Columns>
+
+## Register a named form
+
+<Steps>
+  <Step title="Build the form">
+    Field by field, `From<T>()`, or a loop over metadata. The last node on the chain is still a valid form.
+
+    ```csharp
+    var form = FormElicitationBuilder.Create("Ship this order")
+        .String("trackingNumber").Required();
+    ```
+  </Step>
+  <Step title="Register it">
+    [`AddFormElicitation`](/mcpessentials/api-reference/Microsoft/Extensions/DependencyInjection/IServiceCollection) stamps `Name` when it is empty so the keyed singleton matches the registration name.
+
+    ```csharp
+    services.AddFormElicitation("ship", form);
+    ```
+  </Step>
+  <Step title="Read it on the tool">
+    ```csharp
+    [McpServerTool(Name = "ShipOrder"), Description("Asks for a tracking number, then ships.")]
+    [McpElicitForm("ship")]
+    public static string ShipOrder(RequestContext<CallToolRequestParams> context)
+    {
+        var result = context.RequireForm("ship");
+        if (!result.IsAccepted)
+        {
+            return "Shipping cancelled.";
+        }
+
+        return $"Shipped as {result.Content!["trackingNumber"].GetString()}.";
+    }
+    ```
+  </Step>
+</Steps>
+
+<Tip>
+`Create`, `From<T>`, and every field facade implement [`IFormElicitationSource`](/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/IFormElicitationSource). The current node on the chain is a valid argument to `AddFormElicitation`, `RequireForm`, and `SetInputRequestsAsync`.
+</Tip>
 
 ## Pick an authoring style
 
@@ -26,13 +74,13 @@ MCP form elicitation asks the client for a **flat object of primitives**. [`Form
     Start empty and add fields by wire name. Keep the builder when you add several fields in a loop.
 
     ```csharp
-    var result = await server.ElicitAsync(
-        FormElicitation.Create("Tell us who you are")
+    services.AddFormElicitation("who",
+        FormElicitationBuilder.Create("Tell us who you are")
             .String("firstName").Required().MinLength(1)
             .Email("email").Required()
-            .Integer("age").Between(18, 120),
-        cancellationToken);
+            .Integer("age").Between(18, 120));
 
+    var result = context.RequireForm("who");
     if (!result.IsAccepted)
     {
         return "cancelled";
@@ -42,7 +90,7 @@ MCP form elicitation asks the client for a **flat object of primitives**. [`Form
     ```
   </Tab>
   <Tab title="From a type" icon="cube">
-    Seed from a DTO, then override titles, bounds, and required. `T` is inferred on `ElicitAsync`.
+    Seed from a DTO, then override titles, bounds, and required. `RequireForm<T>` deserializes accepted content onto `T`.
 
     ```csharp
     public class ProductQuery
@@ -52,12 +100,12 @@ MCP form elicitation asks the client for a **flat object of primitives**. [`Form
         public int Skip { get; set; }
     }
 
-    var result = await server.ElicitAsync(
-        FormElicitation.From<ProductQuery>("Query products")
+    services.AddFormElicitation("query",
+        FormElicitationBuilder.From<ProductQuery>("Query products")
             .Exclude(x => x.Skip)
-            .Integer(x => x.Top).Min(1).Max(1000).Default(20),
-        cancellationToken);
+            .Integer(x => x.Top).Min(1).Max(1000).Default(20));
 
+    var result = context.RequireForm<ProductQuery>("query");
     if (result.IsAccepted)
     {
         Query(result.Content!);
@@ -65,14 +113,15 @@ MCP form elicitation asks the client for a **flat object of primitives**. [`Form
     ```
   </Tab>
   <Tab title="Metadata-driven" icon="diagram-project">
-    Keep the builder. Add a field per runtime name (EDM property, query option, action parameter). Bind accepted content onto a DTO if you have one.
+    Keep the builder. Add a field per runtime name (EDM property, query option, action parameter). Pass the instance to `RequireForm<T>` when `T` is a DTO.
 
     ```csharp
-    var form = FormElicitation.Create($"How should we query {entitySet}?");
+    var form = FormElicitationBuilder.Create($"How should we query {entitySet}?");
     form.String("filter").Title("$filter").Description("OData filter expression");
     form.Integer("top").Title("$top").Min(1).Max(1000).Default(20);
+    services.AddFormElicitation("query", form);
 
-    var result = await server.ElicitAsync<ProductQuery>(form, cancellationToken);
+    var result = context.RequireForm<ProductQuery>("query");
     if (result.IsAccepted)
     {
         Query(result.Content!);
@@ -81,26 +130,23 @@ MCP form elicitation asks the client for a **flat object of primitives**. [`Form
   </Tab>
 </Tabs>
 
-<Tip>
-`Create`, `From<T>`, and every field facade implement [`IFormElicitationSource`](/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/IFormElicitationSource). The current node on the chain is a valid argument to `ElicitAsync` and `SetInputRequestsAsync`.
-</Tip>
-
 ## Start a form
 
 <CodeGroup>
 
 ```csharp Create
-var form = FormElicitation.Create("Need a shipping address");
+var form = FormElicitationBuilder.Create("Need a shipping address");
 ```
 
 ```csharp From a type
-var form = FormElicitation.From<CheckoutForm>("Confirm checkout");
+var form = FormElicitationBuilder.From<CheckoutForm>("Confirm checkout");
 ```
 
 ```csharp Confirm dialog
-var result = await server.ElicitAsync(
-    FormElicitation.From<EmptyForm>("Delete this order?"),
-    cancellationToken);
+services.AddFormElicitation("confirm",
+    FormElicitationBuilder.From<EmptyForm>("Delete this order?"));
+
+var result = context.RequireForm("confirm");
 ```
 
 </CodeGroup>
@@ -108,26 +154,6 @@ var result = await server.ElicitAsync(
 `From<T>().Build()` with no chain is a valid form. Zero fields is a confirm dialog: the client shows the message and accept / decline.
 
 `Create(null)` and `From<T>(null)` throw `ArgumentNullException`. Whitespace messages are allowed at create and throw from `Build()`.
-
-## Compact XML
-
-`Build()` materializes SDK `ElicitRequestParams` and seals the field list. `ToInputRequest()` wraps that graph; `ToJson()` returns the JSON already on `InputRequest.Params`. `ToXml()` writes a compact `<Form>` island and caches it on the builder (named DI forms reuse that string). OData `$metadata` wraps the island in `Mcp.ElicitForm`. Adding a field after `Build` / `ToXml` / `ToJson` throws; the analyzer reports **MCPESS006**.
-
-```csharp
-var form = FormElicitation.Create("Ship this order")
-    .String("trackingNumber").Required();
-
-string xml = form.ToXml();
-var again = FormElicitation.ParseXml(xml);
-```
-
-Register a named form for hosts that resolve it like a named `HttpClient`:
-
-```csharp
-services.AddFormElicitation("ship", form);
-```
-
-The codec is handwritten `XmlWriter` / `XmlReader` (AOT-safe). See `specs/form-xml.md`.
 
 ## Field kinds
 
@@ -211,7 +237,7 @@ Starters camelCase the name (`FirstName` → `firstName`) and Titleize the label
   </Tab>
   <Tab title="Fluent override" icon="sliders">
     ```csharp
-    FormElicitation.From<SignupForm>("Sign up")
+    FormElicitationBuilder.From<SignupForm>("Sign up")
         .String(x => x.Code).Optional()
         .String(x => x.Hint).Required();
     ```
@@ -241,7 +267,7 @@ Starters camelCase the name (`FirstName` → `firstName`) and Titleize the label
   </Accordion>
   <Accordion title="Reconfigure and extra fields" icon="pen">
     ```csharp
-    FormElicitation.From<KitchenSinkForm>("Fill this out")
+    FormElicitationBuilder.From<KitchenSinkForm>("Fill this out")
         .Exclude(x => x.Nickname)
         .String(x => x.Name).Title("Full name").MinLength(1)
         .Email(x => x.Homepage)          // reconfigure a seeded URI as email
@@ -252,100 +278,65 @@ Starters camelCase the name (`FirstName` → `firstName`) and Titleize the label
   </Accordion>
 </AccordionGroup>
 
-## Send the form
+## Read the answer
 
-<Tabs>
-  <Tab title="Untyped" icon="brackets-curly">
-    Content is `IDictionary<string, JsonElement>` keyed by camelCase wire names.
+`RequireForm("ship")` returns [`ElicitResult`](/mcpessentials/api-reference/ModelContextProtocol/Protocol/ElicitResult). `Content` is `IDictionary<string, JsonElement>` keyed by camelCase wire names.
 
-    ```csharp
-    var result = await server.ElicitAsync(
-        FormElicitation.Create("Need a name").String("name").Required(),
-        cancellationToken);
-
-    if (result.IsAccepted)
-    {
-        var name = result.Content!["name"].GetString();
-    }
-    ```
-  </Tab>
-  <Tab title="Typed From&lt;T&gt;" icon="cube">
-    `T` is inferred. Cancel and decline leave `Content` default.
-
-    ```csharp
-    var result = await server.ElicitAsync(
-        FormElicitation.From<ProductQuery>("Query products"),
-        cancellationToken);
-
-    if (result.IsAccepted)
-    {
-        Use(result.Content!);
-    }
-    ```
-  </Tab>
-  <Tab title="Bind a dynamic form" icon="link">
-    Specify `T` when the form was built from strings.
-
-    ```csharp
-    var result = await server.ElicitAsync<ProductQuery>(form, cancellationToken);
-    ```
-
-    Or bind later:
-
-    ```csharp
-    var typed = FormElicitation.Bind<ProductQuery>(raw);
-    ```
-  </Tab>
-</Tabs>
-
-Wire names are camelCase. Enum members match `Enum.GetNames` (`BlueGreen`, not `blueGreen`). Native AOT callers pass `JsonSerializerOptions` from a `JsonSerializerContext`:
+`RequireForm<ProductQuery>("query")` returns `ElicitResult<ProductQuery>`. Cancel and decline leave `Content` at its default. Native AOT callers pass `JsonSerializerOptions` from a `JsonSerializerContext`:
 
 ```csharp
-var result = await server.ElicitAsync<ProductQuery>(
-    form,
-    ProductQueryJsonContext.Default.Options,
-    cancellationToken);
+var result = context.RequireForm<ProductQuery>(
+    "query",
+    ProductQueryJsonContext.Default.Options);
 ```
 
-## Tasks
+You can pass a live builder instead of a name when `Name` is set (`AddFormElicitation` stamps it):
 
-A tool that `await`s `server.ElicitAsync(form)` inside a task **does not call the store**. The SDK interceptor writes the form as an [`InputRequest`](/mcpessentials/api-reference/ModelContextProtocol/Extensions/Tasks/IMcpTaskStore) and resumes when the client responds.
-
-<Steps>
-  <Step title="Tool awaits ElicitAsync">
-    Same call as a non-task tool. Use the `McpServer` from the request context.
-  </Step>
-  <Step title="Interceptor parks the form">
-    The task moves to `InputRequired`. The client polls `tasks/get` and fulfills the elicitation.
-  </Step>
-  <Step title="Client responds">
-    `InputResponseReceived` completes the await. Bind or read `result.Content` and continue the tool.
-  </Step>
-</Steps>
-
-Park a form yourself from a background worker or when you need a stable request id:
-
-<CodeGroup>
-
-```csharp Generated id
-await store.SetInputRequestsAsync(taskId, form);
+```csharp
+var result = context.RequireForm(form);
+var typed = context.RequireForm<ProductQuery>(form);
 ```
 
-```csharp Explicit id
-await store.SetInputRequestsAsync(taskId, "create-product", form);
+Wire names are camelCase. Enum members match `Enum.GetNames` (`BlueGreen`, not `blueGreen`).
+
+## Compact XML for OData
+
+OData `$metadata` can wrap a registered form as an `Mcp.ElicitForm` island. That codec is `ToXml()` / `ParseXml` on the builder. MCP elicitation on the wire does not use it: `ToInputRequest()` sends SDK `ElicitRequestParams` (`mode: form`).
+
+```csharp
+string xml = form.ToXml();
+var again = FormElicitationBuilder.ParseXml(xml);
 ```
 
-```csharp InputRequest
-await store.SetInputRequestsAsync(taskId, form.ToInputRequest());
-```
+`ToXml()` caches the island on the builder so a named DI singleton does not rewrite it. `ParseXml` / `FromDefinition` rebuild an untyped builder. Adding a field after `Build` / `ToXml` / `ToJson` / `ToDefinition` / `ToInputRequest` throws; the analyzer reports **MCPESS006**.
 
-</CodeGroup>
+The codec is handwritten `XmlWriter` / `XmlReader` (AOT-safe). See `specs/form-xml.md`.
 
-`ToInputRequest()` is the same payload `ElicitAsync` sends. Omit the request id to get a 32-character hex key.
+<Accordion title="Park a form on a running task" icon="pause">
+  A background worker that already has a `taskId` can attach the form without `RequireForm`:
+
+  <CodeGroup>
+
+  ```csharp Generated id
+  await store.SetInputRequestsAsync(taskId, form);
+  ```
+
+  ```csharp Explicit id
+  await store.SetInputRequestsAsync(taskId, "create-product", form);
+  ```
+
+  ```csharp InputRequest
+  await store.SetInputRequestsAsync(taskId, form.ToInputRequest());
+  ```
+
+  </CodeGroup>
+
+  `ToInputRequest()` is the same payload `RequireForm` sends. Omit the request id to get a 32-character hex key.
+</Accordion>
 
 ## Validation that throws
 
-These fail at the fluent call or at `Build()` / `ElicitAsync` / `SetInputRequestsAsync`, not after the client answers.
+These fail at the fluent call or at `Build()` / `RequireForm` / `SetInputRequestsAsync`, not after the client answers.
 
 | When | Exception |
 |---|---|
@@ -370,15 +361,15 @@ An empty property list is legal. Nested property access in `Exclude` / expressio
 
 ## Related
 
-<CardGroup cols={2}>
-  <Card title="FormElicitation" icon="bolt" href="/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/FormElicitation">
-    `Create`, `From<T>`, and `Bind<T>`.
+<Columns cols={2}>
+  <Card title="Understanding form elicitation" icon="clipboard-question" href="/mcpessentials/guides/understanding-form-elicitation">
+    Two POSTs, `[McpElicitForm]`, `RequireForm`, headers, and `_meta`.
   </Card>
-  <Card title="FormElicitationBuilder" icon="code-branch" href="/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/FormElicitationBuilder">
-    Field starters, `Build`, `ToInputRequest`.
+  <Card title="FormElicitationBuilder" icon="bolt" href="/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/FormElicitationBuilder">
+    `Create` and `From<T>`. Field-by-field or seeded from a DTO.
   </Card>
-  <Card title="McpServer.ElicitAsync" icon="paper-plane" href="/mcpessentials/api-reference/ModelContextProtocol/Server/McpServer">
-    Send a form. Typed overloads infer `T` or bind a dynamic form.
+  <Card title="FormElicitationBuilder&lt;T&gt;" icon="cube" href="/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/FormElicitationBuilder">
+    Typed `From` and expression starters.
   </Card>
   <Card title="IMcpTaskStore" icon="box-archive" href="/mcpessentials/api-reference/ModelContextProtocol/Extensions/Tasks/IMcpTaskStore">
     `SetInputRequestsAsync(taskId, form)` when you park the form yourself.
@@ -387,6 +378,6 @@ An empty property list is legal. Nested property access in `Exclude` / expressio
     Compiler diagnostics for `From<T>`, colliding names, and invalid lambdas.
   </Card>
   <Card title="Authenticated tasks" icon="user-lock" href="/mcpessentials/guides/authenticated-tasks">
-    Park a form on a task. Isolation, identity, and samples.
+    Isolation, identity, and samples.
   </Card>
-</CardGroup>
+</Columns>

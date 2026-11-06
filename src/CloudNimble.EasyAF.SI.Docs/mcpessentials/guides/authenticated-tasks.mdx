@@ -86,7 +86,7 @@ No user on a client-facing call throws [`McpTaskUserRequiredException`](/mcpesse
 
 Each overload has a matching `AddInMemoryMcpTaskStorePlus` on `IServiceCollection`. Pass `McpTaskStoreOptions` as the next argument to set `DefaultTimeToLive` and `DefaultPollIntervalMs`. `null` TTL keeps tasks until the store discards them.
 
-Claim lookup matches the SDK session identity order: `NameIdentifier`, `sub`, `UPN`, `Name`. Types are unsealed; subclass [`McpTaskStoreBase`](/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/McpTaskStoreBase) to change isolation, TTL, or storage.
+Claim lookup order: `NameIdentifier`, `sub`, `UPN`, `Name`. Types are unsealed; subclass [`McpTaskStoreBase`](/mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/McpTaskStoreBase) to change isolation, TTL, or storage.
 
 ## Isolation rules
 
@@ -191,7 +191,7 @@ Each sample is a standalone Streamable HTTP host. Fake authentication is the `X-
 
 <CardGroup cols={2}>
   <Card title="Form elicitation" icon="clipboard-list" href="/mcpessentials/guides/form-elicitation">
-    Ask the client for a form while a task is running.
+    Author a form and read it with `RequireForm`.
   </Card>
   <Card title="Analyzers" icon="wand-magic-sparkles" href="/mcpessentials/guides/analyzers">
     Catch broken forms at compile time.

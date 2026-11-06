@@ -46,6 +46,7 @@
             "pages": [
               "mcpessentials/guides/index",
               "mcpessentials/guides/authenticated-tasks",
+              "mcpessentials/guides/understanding-form-elicitation",
               "mcpessentials/guides/form-elicitation",
               "mcpessentials/guides/analyzers",
               {
@@ -136,15 +137,18 @@
                                   "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/ChoiceFieldBuilder",
                                   "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/ChoiceFieldBuilder",
                                   "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/FormDefinition",
-                                  "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/FormElicitation",
                                   "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/FormElicitationBuilder",
                                   "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/FormElicitationBuilder",
+                                  "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/FormElicitationBuilderBase",
+                                  "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/FormElicitationExecutionMode",
                                   "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/FormFieldDefinition",
                                   "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/FormFieldType",
                                   "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/FormOptionDefinition",
                                   "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/FormXml",
                                   "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/IFormElicitationSource",
                                   "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/IFormElicitationSource",
+                                  "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/McpElicitFormAttribute",
+                                  "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/McpElicitUrlAttribute",
                                   "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/MultiChoiceFieldBuilder",
                                   "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/MultiChoiceFieldBuilder",
                                   "mcpessentials/api-reference/CloudNimble/McpEssentials/Core/Tasks/Elicitations/NumberFieldBuilder",
@@ -282,7 +286,7 @@
                     "icon": "folder-tree",
                     "pages": [
                       "mcpessentials/api-reference/ModelContextProtocol/Server/index",
-                      "mcpessentials/api-reference/ModelContextProtocol/Server/McpServer"
+                      "mcpessentials/api-reference/ModelContextProtocol/Server/RequestContext"
                     ]
                   }
                 ]
@@ -341,20 +345,6 @@
                 "icon": "folder-tree",
                 "pages": [
                   {
-                    "group": "AspNetCore",
-                    "icon": "folder-tree",
-                    "pages": [
-                      {
-                        "group": "Builder",
-                        "icon": "folder-tree",
-                        "pages": [
-                          "odata-mcp/api-reference/Microsoft/AspNetCore/Builder/index",
-                          "odata-mcp/api-reference/Microsoft/AspNetCore/Builder/IApplicationBuilder"
-                        ]
-                      }
-                    ]
-                  },
-                  {
                     "group": "Extensions",
                     "icon": "folder-tree",
                     "pages": [
@@ -378,120 +368,6 @@
                         "icon": "folder-tree",
                         "pages": [
                           {
-                            "group": "AspNetCore",
-                            "icon": "folder-tree",
-                            "pages": [
-                              {
-                                "group": "Adaptation",
-                                "icon": "folder-tree",
-                                "pages": [
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Adaptation/index",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Adaptation/EdmModelAdapter"
-                                ]
-                              },
-                              {
-                                "group": "Authentication",
-                                "icon": "folder-tree",
-                                "pages": [
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Authentication/index",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Authentication/ProtectedResourceMetadataMiddleware",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Authentication/ProtectedResourceMetadataOptions",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Authentication/ProtectedResourceMetadataStartupFilter"
-                                ]
-                              },
-                              {
-                                "group": "Constants",
-                                "icon": "folder-tree",
-                                "pages": [
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Constants/index",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Constants/AspNetCoreJsonConstants",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Constants/ProtectedResourceConstants"
-                                ]
-                              },
-                              {
-                                "group": "Execution",
-                                "icon": "folder-tree",
-                                "pages": [
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Execution/index",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Execution/InProcessODataExecutor"
-                                ]
-                              },
-                              {
-                                "group": "Hosting",
-                                "icon": "folder-tree",
-                                "pages": [
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Hosting/index",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Hosting/IMcpAnnotatedActionWaiter",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Hosting/McpAnnotatedActionContext",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Hosting/McpHttpContextAccessor",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Hosting/ODataMcpHostOptions",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Hosting/ODataMcpPipeline",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Hosting/ODataMcpPipelineStartupFilter",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Hosting/ODataMcpRouteBinding",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Hosting/ODataMcpRouteDiscovery",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Hosting/ODataMcpServerBuilder",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Hosting/ODataMcpSessionFactory"
-                                ]
-                              },
-                              {
-                                "group": "Vocabularies",
-                                "icon": "folder-tree",
-                                "pages": [
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Vocabularies/index",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Vocabularies/McpTaskAnnotations",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Vocabularies/McpTaskAttributeAnnotations",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/AspNetCore/Vocabularies/McpVocabularyModel"
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "group": "Authentication",
-                            "icon": "folder-tree",
-                            "pages": [
-                              {
-                                "group": "Outbound",
-                                "icon": "folder-tree",
-                                "pages": [
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/index",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/AuthorizationCodePkceGrant",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/AuthorizationServerMetadata",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/AuthorizationServerMetadataClient",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/ClientCredentialsGrant",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/DeviceAuthorizationResponse",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/DeviceCodeGrant",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/DynamicClientRegistrar",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/DynamicClientRegistrationRequest",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/FileIdTokenCallback",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/GrantSelector",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/LatchkeyTokenCache",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/LoopbackAuthorizationCallback",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OAuthChallenge",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OAuthConsentRequiredException",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OAuthDiscovery",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OAuthDiscoveryResult",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OAuthErrorPayload",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OAuthTokenException",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/ODataMcpAuthConstants",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/ODataOutboundAuthHandler",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OutboundAuthLogRedactor",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OutboundConsentRequest",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OutboundDiscoveryException",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OutboundGrantKind",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OutboundGrantKindParser",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OutboundOAuthClient",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/OutboundOAuthOptions",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/ProtectedResourceMetadataClient",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/RefreshTokenGrant",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/ScopeResolver",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/TokenEndpointClient",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/TokenEndpointResponse",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Authentication/Outbound/WwwAuthenticateParser"
-                                ]
-                              }
-                            ]
-                          },
-                          {
                             "group": "Core",
                             "icon": "folder-tree",
                             "pages": [
@@ -503,9 +379,11 @@
                                   "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/EdmModelShape",
                                   "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/EdmPayloadValidator",
                                   "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/EdmTypeShape",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ElicitFormMapper",
                                   "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataEnumJsonFormat",
                                   "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataMcpCatalog",
                                   "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataMcpCatalogOptions",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataMcpFormElicitation",
                                   "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataMcpInstructions",
                                   "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataMcpSession",
                                   "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Catalog/ODataOperationKind",
@@ -557,6 +435,10 @@
                                   "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmActionImport",
                                   "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmComplexType",
                                   "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmDocumentation",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmElicitForm",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmElicitFormField",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmElicitFormFieldType",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmElicitFormOption",
                                   "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmEntityContainer",
                                   "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmEntitySet",
                                   "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Models/EdmEntityType",
@@ -580,6 +462,7 @@
                                 "pages": [
                                   "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Parsing/index",
                                   "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Parsing/CsdlParser",
+                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Parsing/ElicitFormXml",
                                   "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Parsing/ICsdlMetadataParser"
                                 ]
                               },
@@ -588,53 +471,12 @@
                                 "icon": "folder-tree",
                                 "pages": [
                                   "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Vocabularies/index",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Vocabularies/McpElicitUrlAttribute",
                                   "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Vocabularies/McpTaskAttribute",
                                   "odata-mcp/api-reference/Microsoft/OData/Mcp/Core/Vocabularies/McpVocabulary"
                                 ]
                               }
                             ]
-                          },
-                          {
-                            "group": "Tools",
-                            "icon": "folder-tree",
-                            "pages": [
-                              "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/index",
-                              "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Program",
-                              {
-                                "group": "Commands",
-                                "icon": "folder-tree",
-                                "pages": [
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Commands/index",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Commands/AddAuthChoice",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Commands/AddCommand",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Commands/AddCommandAuthSettings",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Commands/ODataMcpRootCommand",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Commands/StartCommand",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Commands/TryCommand"
-                                ]
-                              },
-                              {
-                                "group": "Hosting",
-                                "icon": "folder-tree",
-                                "pages": [
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Hosting/index",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Hosting/ShutdownServerTool",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Hosting/StdioConsentPresenter",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Hosting/ToolsMcpHost",
-                                  "odata-mcp/api-reference/Microsoft/OData/Mcp/Tools/Hosting/ToolsMcpSessionHolder"
-                                ]
-                              }
-                            ]
                           }
-                        ]
-                      },
-                      {
-                        "group": "ModelBuilder",
-                        "icon": "folder-tree",
-                        "pages": [
-                          "odata-mcp/api-reference/Microsoft/OData/ModelBuilder/index",
-                          "odata-mcp/api-reference/Microsoft/OData/ModelBuilder/ActionConfiguration"
                         ]
                       }
                     ]
