@@ -2,7 +2,7 @@
 title: ArtifactWatchArm
 description: "Represents the connection state of an artifact watch."
 icon: file-brackets-curly
-keywords: ['ArtifactWatchArm', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.ArtifactWatchArm', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class', 'System.Object']
+keywords: ['ArtifactWatchArm', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.ArtifactWatchArm', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['ArtifactWatchArm', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Respons
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Responses
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -52,12 +50,12 @@ Gets or sets when the state was recorded, in epoch milliseconds.
 #### Syntax
 
 ```csharp
-public System.Nullable<long> At { get; set; }
+public long? At { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<long>?`
+Type: `long?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Detail
 
@@ -80,12 +78,12 @@ Gets or sets the number of failures so far.
 #### Syntax
 
 ```csharp
-public System.Nullable<int> Failures { get; set; }
+public int? Failures { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>?`
+Type: `int?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> LastFailure
 
@@ -108,12 +106,12 @@ Gets or sets the maximum number of failures allowed.
 #### Syntax
 
 ```csharp
-public System.Nullable<int> MaxFailures { get; set; }
+public int? MaxFailures { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>?`
+Type: `int?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> NextInS
 
@@ -122,12 +120,12 @@ Gets or sets the seconds until the next attempt.
 #### Syntax
 
 ```csharp
-public System.Nullable<double> NextInS { get; set; }
+public double? NextInS { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<double>?`
+Type: `double?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Rail
 
@@ -164,12 +162,12 @@ Gets or sets a value indicating whether the connection will reconnect.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> Reconnect { get; set; }
+public bool? Reconnect { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> ServerMessage
 

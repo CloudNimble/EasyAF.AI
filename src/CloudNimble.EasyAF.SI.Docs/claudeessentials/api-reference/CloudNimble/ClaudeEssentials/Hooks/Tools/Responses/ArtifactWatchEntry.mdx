@@ -2,7 +2,7 @@
 title: ArtifactWatchEntry
 description: "Represents one watch returned by the Artifact tool's status action."
 icon: file-brackets-curly
-keywords: ['ArtifactWatchEntry', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.ArtifactWatchEntry', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class', 'System.Object']
+keywords: ['ArtifactWatchEntry', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.ArtifactWatchEntry', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['ArtifactWatchEntry', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Respo
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Responses
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -70,12 +68,12 @@ Gets or sets a value indicating whether a live watch is connected.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> Connected { get; set; }
+public bool? Connected { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Connecting
 
@@ -84,12 +82,12 @@ Gets or sets a value indicating whether a live watch is connecting.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> Connecting { get; set; }
+public bool? Connecting { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Events
 
@@ -112,12 +110,12 @@ Gets or sets a value indicating whether the watch was requested explicitly.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> Explicit { get; set; }
+public bool? Explicit { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Rail
 
@@ -126,12 +124,12 @@ Gets or sets the delivery rail. Absent on a live watch.
 #### Syntax
 
 ```csharp
-public System.Nullable<CloudNimble.ClaudeEssentials.Hooks.ArtifactWatchRail> Rail { get; set; }
+public CloudNimble.ClaudeEssentials.Hooks.ArtifactWatchRail? Rail { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<CloudNimble.ClaudeEssentials.Hooks.ArtifactWatchRail?>?`
+Type: `CloudNimble.ClaudeEssentials.Hooks.ArtifactWatchRail?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Restored
 
@@ -140,12 +138,12 @@ Gets or sets a value indicating whether a durable watch was restored.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> Restored { get; set; }
+public bool? Restored { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Since
 
@@ -154,12 +152,12 @@ Gets or sets when the watch started, as an epoch number or a timestamp string de
 #### Syntax
 
 ```csharp
-public System.Nullable<System.Text.Json.JsonElement> Since { get; set; }
+public System.Text.Json.JsonElement? Since { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<System.Text.Json.JsonElement?>?`
+Type: `System.Text.Json.JsonElement?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> StopKind
 
@@ -196,12 +194,12 @@ Gets or sets when the watch token expires, in epoch milliseconds.
 #### Syntax
 
 ```csharp
-public System.Nullable<long> TokenExpiresAt { get; set; }
+public long? TokenExpiresAt { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<long>?`
+Type: `long?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> TriggerId
 

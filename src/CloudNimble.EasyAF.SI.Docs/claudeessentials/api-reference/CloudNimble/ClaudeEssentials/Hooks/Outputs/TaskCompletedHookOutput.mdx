@@ -23,7 +23,7 @@ CloudNimble.ClaudeEssentials.Hooks.Outputs.TaskCompletedHookOutput
 
 Represents the output for a TaskCompleted hook.
 Use exit code 2 to block task completion with stderr feedback,
-or set [HookOutputBase.Continue](/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/HookOutputBase#continue) to false with a [HookOutputBase.StopReason](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/HookOutputBase#stopreason)
+or set [HookOutputBase.Continue](/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/WorktreeRemoveHookOutput#continue) to false with a [HookOutputBase.StopReason](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/WorktreeRemoveHookOutput#stopreason)
 to stop the teammate entirely.
 
 ## Constructors
@@ -89,12 +89,12 @@ Gets or sets the top-level decision for this hook.
 #### Syntax
 
 ```csharp
-public System.Nullable<CloudNimble.ClaudeEssentials.Hooks.HookDecision> Decision { get; set; }
+public CloudNimble.ClaudeEssentials.Hooks.HookDecision? Decision { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<CloudNimble.ClaudeEssentials.Hooks.HookDecision?>?`
+Type: `CloudNimble.ClaudeEssentials.Hooks.HookDecision?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Reason <Badge color="gray">Inherited</Badge>
 
@@ -116,7 +116,7 @@ Type: `string?`
 
 <Note>Inherited from `CloudNimble.ClaudeEssentials.Hooks.Outputs.HookOutputBase`</Note>
 
-Gets or sets the reason message shown when [HookOutputBase.Continue](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/HookOutputBase#continue) is false.
+Gets or sets the reason message shown when [HookOutputBase.Continue](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/Outputs/WorktreeRemoveHookOutput#continue) is false.
 This message is displayed to the user when the operation is stopped.
 
 #### Syntax

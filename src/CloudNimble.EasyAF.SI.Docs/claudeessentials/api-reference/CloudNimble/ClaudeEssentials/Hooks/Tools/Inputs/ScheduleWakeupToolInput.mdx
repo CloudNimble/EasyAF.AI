@@ -2,7 +2,7 @@
 title: ScheduleWakeupToolInput
 description: "Represents the input parameters for the ScheduleWakeup tool, which schedules when a dynamic loop resumes."
 icon: file-brackets-curly
-keywords: ['ScheduleWakeupToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs.ScheduleWakeupToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs', 'class', 'System.Object']
+keywords: ['ScheduleWakeupToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs.ScheduleWakeupToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['ScheduleWakeupToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -52,12 +50,12 @@ Gets or sets the seconds from now to wake up, clamped to the range 60 to 3600 by
 #### Syntax
 
 ```csharp
-public System.Nullable<double> DelaySeconds { get; set; }
+public double? DelaySeconds { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<double>?`
+Type: `double?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Noop
 
@@ -66,12 +64,12 @@ Gets or sets a value indicating whether nothing changed since the last tick. Req
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> Noop { get; set; }
+public bool? Noop { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Prompt
 
@@ -108,12 +106,12 @@ Gets or sets a value indicating whether to end the dynamic loop immediately inst
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> Stop { get; set; }
+public bool? Stop { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ## Methods
 

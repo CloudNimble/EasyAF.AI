@@ -2,7 +2,7 @@
 title: BashToolResponse
 description: "Represents the response payload returned by the Claude Code Bash tool after executing a shell command."
 icon: file-brackets-curly
-keywords: ['BashToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.BashToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class', 'System.Object']
+keywords: ['BashToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.BashToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['BashToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Respons
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Responses
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -90,12 +88,12 @@ Gets or sets a value indicating whether the user manually backgrounded the comma
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> BackgroundedByUser { get; set; }
+public bool? BackgroundedByUser { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> BackgroundEndsWithFinalResponse
 
@@ -104,12 +102,12 @@ Gets or sets a value indicating whether this backgrounded command is terminated 
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> BackgroundEndsWithFinalResponse { get; set; }
+public bool? BackgroundEndsWithFinalResponse { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> BackgroundTaskId
 
@@ -132,12 +130,12 @@ Gets or sets a value indicating whether the subagent that owns this backgrounded
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> BackgroundWakesOwner { get; set; }
+public bool? BackgroundWakesOwner { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> DangerouslyDisableSandbox
 
@@ -146,12 +144,12 @@ Gets or sets a value indicating whether sandbox mode was overridden.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> DangerouslyDisableSandbox { get; set; }
+public bool? DangerouslyDisableSandbox { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> GhRateLimitHint
 
@@ -214,12 +212,12 @@ Gets or sets a value indicating whether the output contains image data.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> IsImage { get; set; }
+public bool? IsImage { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 #### Remarks
 
@@ -237,12 +235,12 @@ Gets or sets a value indicating whether the command is expected to produce no ou
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> NoOutputExpected { get; set; }
+public bool? NoOutputExpected { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> PersistedOutputPath
 
@@ -265,12 +263,12 @@ Gets or sets the total size of the output in bytes, set when the output is too l
 #### Syntax
 
 ```csharp
-public System.Nullable<long> PersistedOutputSize { get; set; }
+public long? PersistedOutputSize { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<long>?`
+Type: `long?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> RawOutputPath
 
@@ -386,7 +384,7 @@ public System.Collections.Generic.List<System.Text.Json.JsonElement> StructuredC
 
 #### Property Value
 
-Type: `System.Collections.Generic.List<System.Text.Json.JsonElement?>?`
+Type: `System.Collections.Generic.List<System.Text.Json.JsonElement>?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> TimedOutAfterMs
 
@@ -395,12 +393,12 @@ Gets or sets the timeout value in milliseconds, set when the command hit its tim
 #### Syntax
 
 ```csharp
-public System.Nullable<long> TimedOutAfterMs { get; set; }
+public long? TimedOutAfterMs { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<long>?`
+Type: `long?`
 
 ## Methods
 

@@ -1,4 +1,4 @@
-<Project Sdk="DotNetDocs.Sdk/1.5.5-preview.3">
+<Project Sdk="DotNetDocs.Sdk/2.0.0">
 
     <PropertyGroup>
         <DocumentationType>Mintlify</DocumentationType>
@@ -39,7 +39,7 @@
                 </Pages>
                 <Tabs>
                     <!-- Href-only; moved to the end after DocumentationReference tabs are appended. -->
-                    <Tab Name="Core Framework" Href="https://easyaf.dev" Position="End" />
+                    <Tab Name="Core Framework" Href="https://easyaf.nimbleapps.cloud" Position="End" />
                 </Tabs>
             </Navigation>
             <Interaction>

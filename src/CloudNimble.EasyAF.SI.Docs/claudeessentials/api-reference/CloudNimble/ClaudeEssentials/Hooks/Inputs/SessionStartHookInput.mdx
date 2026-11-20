@@ -95,12 +95,12 @@ Gets or sets the tokens in the resumed transcript's last response. Applies to re
 #### Syntax
 
 ```csharp
-public System.Nullable<long> ContextTokens { get; set; }
+public long? ContextTokens { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<long>?`
+Type: `long?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> CurrentWorkingDirectory <Badge color="gray">Inherited</Badge>
 
@@ -141,12 +141,12 @@ Gets or sets the estimated cost of re-caching the context on the session model. 
 #### Syntax
 
 ```csharp
-public System.Nullable<double> EstimatedCacheWriteUsd { get; set; }
+public double? EstimatedCacheWriteUsd { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<double>?`
+Type: `double?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> HookEventName <Badge color="gray">Inherited</Badge>
 
@@ -162,7 +162,7 @@ public CloudNimble.ClaudeEssentials.Hooks.HookEventName HookEventName { get; set
 
 #### Property Value
 
-Type: `CloudNimble.ClaudeEssentials.Hooks.HookEventName?`
+Type: `CloudNimble.ClaudeEssentials.Hooks.HookEventName`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Model
 
@@ -187,12 +187,12 @@ Gets or sets the permission mode under which Claude Code is operating.
 #### Syntax
 
 ```csharp
-public System.Nullable<CloudNimble.ClaudeEssentials.Hooks.PermissionMode> PermissionMode { get; set; }
+public CloudNimble.ClaudeEssentials.Hooks.PermissionMode? PermissionMode { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<CloudNimble.ClaudeEssentials.Hooks.PermissionMode?>?`
+Type: `CloudNimble.ClaudeEssentials.Hooks.PermissionMode?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> PromptCacheLikelyExpired
 
@@ -201,12 +201,12 @@ Gets or sets a value indicating whether the first request will re-cache the cont
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> PromptCacheLikelyExpired { get; set; }
+public bool? PromptCacheLikelyExpired { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> PromptId <Badge color="gray">Inherited</Badge>
 
@@ -231,12 +231,12 @@ Gets or sets the seconds since the resumed transcript's last assistant response.
 #### Syntax
 
 ```csharp
-public System.Nullable<double> SecondsSinceLastResponse { get; set; }
+public double? SecondsSinceLastResponse { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<double>?`
+Type: `double?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> SessionId <Badge color="gray">Inherited</Badge>
 
@@ -280,7 +280,7 @@ public CloudNimble.ClaudeEssentials.Hooks.SessionStartSource Source { get; set; 
 
 #### Property Value
 
-Type: `CloudNimble.ClaudeEssentials.Hooks.SessionStartSource?`
+Type: `CloudNimble.ClaudeEssentials.Hooks.SessionStartSource`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> TranscriptPath <Badge color="gray">Inherited</Badge>
 

@@ -3,7 +3,7 @@ title: UserPromptSource
 description: "Represents who authored or injected a prompt."
 icon: list-ol
 tag: "ENUM"
-keywords: ['UserPromptSource', 'CloudNimble.ClaudeEssentials.Hooks.UserPromptSource', 'CloudNimble.ClaudeEssentials.Hooks', 'class', 'System.Enum']
+keywords: ['UserPromptSource', 'CloudNimble.ClaudeEssentials.Hooks.UserPromptSource', 'CloudNimble.ClaudeEssentials.Hooks', 'enum', 'System.Enum', 'System.IComparable', 'System.ISpanFormattable', 'System.IFormattable', 'System.IConvertible']
 ---
 
 ## Definition
@@ -29,9 +29,16 @@ Represents who authored or injected a prompt.
 | Name | Value | Description |
 |------|-------|-------------|
 | `User` | 0 | The interactive composer. |
-| `Sdk` | 1 | A non-interactive entrypoint, such as <c>-p</c> or the Agent SDK. |
+| `Sdk` | 1 | A non-interactive entrypoint, such as `-p` or the Agent SDK. |
 | `System` | 2 | Claude Code itself. |
 | `LoopWakeup` | 3 | A dynamic loop wakeup. |
 | `ScheduleWakeup` | 4 | A scheduled task. |
 | `PollEvent` | 5 | A polled event. |
+
+## Related APIs
+
+- System.IComparable
+- System.ISpanFormattable
+- System.IFormattable
+- System.IConvertible
 

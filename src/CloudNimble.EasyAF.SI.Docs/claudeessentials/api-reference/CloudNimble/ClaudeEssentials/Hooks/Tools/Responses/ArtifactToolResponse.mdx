@@ -2,7 +2,7 @@
 title: ArtifactToolResponse
 description: "Represents the response payload returned by the Artifact tool."
 icon: file-brackets-curly
-keywords: ['ArtifactToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.ArtifactToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class', 'System.Object']
+keywords: ['ArtifactToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.ArtifactToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['ArtifactToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Res
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Responses
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -196,12 +194,12 @@ Gets or sets the capabilities declared by this publish.
 #### Syntax
 
 ```csharp
-public System.Nullable<System.Text.Json.JsonElement> Capabilities { get; set; }
+public System.Text.Json.JsonElement? Capabilities { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<System.Text.Json.JsonElement?>?`
+Type: `System.Text.Json.JsonElement?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Contract
 
@@ -224,12 +222,12 @@ Gets or sets a value indicating whether artifacts from other organizations were 
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> ExternalListed { get; set; }
+public bool? ExternalListed { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> FaviconSent
 
@@ -238,12 +236,12 @@ Gets or sets a value indicating whether a favicon was sent.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> FaviconSent { get; set; }
+public bool? FaviconSent { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> FilterUrl
 
@@ -280,12 +278,12 @@ Gets or sets a value indicating whether the icon was dropped.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> IconDropped { get; set; }
+public bool? IconDropped { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> LiveSubscription
 
@@ -308,12 +306,12 @@ Gets or sets a value indicating whether the user owns the artifact.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> Owned { get; set; }
+public bool? Owned { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Path
 
@@ -350,12 +348,12 @@ Gets or sets a value indicating whether the artifact is pinned.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> Pinned { get; set; }
+public bool? Pinned { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> PinsEnabled
 
@@ -364,12 +362,12 @@ Gets or sets a value indicating whether pinning is available.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> PinsEnabled { get; set; }
+public bool? PinsEnabled { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> PublishesRemaining
 
@@ -378,12 +376,12 @@ Gets or sets the publishes remaining in the current window.
 #### Syntax
 
 ```csharp
-public System.Nullable<int> PublishesRemaining { get; set; }
+public int? PublishesRemaining { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>?`
+Type: `int?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> PublishesResetAt
 
@@ -392,12 +390,12 @@ Gets or sets when the publish window resets.
 #### Syntax
 
 ```csharp
-public System.Nullable<long> PublishesResetAt { get; set; }
+public long? PublishesResetAt { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<long>?`
+Type: `long?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Read
 
@@ -420,12 +418,12 @@ Gets or sets the scope of the listing.
 #### Syntax
 
 ```csharp
-public System.Nullable<CloudNimble.ClaudeEssentials.Hooks.ArtifactListScope> Scope { get; set; }
+public CloudNimble.ClaudeEssentials.Hooks.ArtifactListScope? Scope { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<CloudNimble.ClaudeEssentials.Hooks.ArtifactListScope?>?`
+Type: `CloudNimble.ClaudeEssentials.Hooks.ArtifactListScope?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Seq
 
@@ -434,12 +432,12 @@ Gets or sets the publish sequence number.
 #### Syntax
 
 ```csharp
-public System.Nullable<long> Seq { get; set; }
+public long? Seq { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<long>?`
+Type: `long?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Stored
 
@@ -476,12 +474,12 @@ Gets or sets the total number of artifacts.
 #### Syntax
 
 ```csharp
-public System.Nullable<int> Total { get; set; }
+public int? Total { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>?`
+Type: `int?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> TotalAtLeast
 
@@ -490,12 +488,12 @@ Gets or sets a value indicating whether the total is a lower bound.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> TotalAtLeast { get; set; }
+public bool? TotalAtLeast { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Truncated
 
@@ -504,12 +502,12 @@ Gets or sets a value indicating whether the list was truncated.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> Truncated { get; set; }
+public bool? Truncated { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Unchanged
 
@@ -518,12 +516,12 @@ Gets or sets a value indicating whether the content was unchanged.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> Unchanged { get; set; }
+public bool? Unchanged { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Unwatch
 
@@ -546,12 +544,12 @@ Gets or sets a value indicating whether an existing artifact was updated.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> Updated { get; set; }
+public bool? Updated { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Url
 

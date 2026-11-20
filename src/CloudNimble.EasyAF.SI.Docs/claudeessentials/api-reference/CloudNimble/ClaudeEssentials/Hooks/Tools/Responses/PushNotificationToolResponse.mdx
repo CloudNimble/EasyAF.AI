@@ -2,7 +2,7 @@
 title: PushNotificationToolResponse
 description: "Represents the response payload returned by the PushNotification tool."
 icon: file-brackets-curly
-keywords: ['PushNotificationToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.PushNotificationToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class', 'System.Object']
+keywords: ['PushNotificationToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.PushNotificationToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['PushNotificationToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.T
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Responses
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -52,12 +50,12 @@ Gets or sets why the notification was not delivered.
 #### Syntax
 
 ```csharp
-public System.Nullable<CloudNimble.ClaudeEssentials.Hooks.PushNotificationDisabledReason> DisabledReason { get; set; }
+public CloudNimble.ClaudeEssentials.Hooks.PushNotificationDisabledReason? DisabledReason { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<CloudNimble.ClaudeEssentials.Hooks.PushNotificationDisabledReason>`
+Type: `CloudNimble.ClaudeEssentials.Hooks.PushNotificationDisabledReason?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> LocalSent
 
@@ -66,12 +64,12 @@ Gets or sets a value indicating whether a local notification was sent.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> LocalSent { get; set; }
+public bool? LocalSent { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Message
 
@@ -94,12 +92,12 @@ Gets or sets a value indicating whether a push notification was sent.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> PushSent { get; set; }
+public bool? PushSent { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> SentAt
 

@@ -2,7 +2,7 @@
 title: ExitPlanModeToolResponse
 description: "Represents the response payload returned by the Claude Code ExitPlanMode tool after transitioning from plan mode to execution mode."
 icon: file-brackets-curly
-keywords: ['ExitPlanModeToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.ExitPlanModeToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class', 'System.Object']
+keywords: ['ExitPlanModeToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.ExitPlanModeToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['ExitPlanModeToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Responses
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -70,12 +68,12 @@ Gets or sets whether the teammate has sent a plan approval request to the team l
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> AwaitingLeaderApproval { get; set; }
+public bool? AwaitingLeaderApproval { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> FilePath
 
@@ -98,12 +96,12 @@ Gets or sets whether the Agent tool is available in the current context.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> HasTaskTool { get; set; }
+public bool? HasTaskTool { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> IsAgent
 
@@ -141,12 +139,12 @@ Determines whether the plan is echoed back in tool_result.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> PlanWasEdited { get; set; }
+public bool? PlanWasEdited { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> RequestId
 

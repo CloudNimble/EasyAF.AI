@@ -2,7 +2,7 @@
 title: AgentToolInput
 description: "Represents the input parameters for the Agent tool. The Agent tool launches specialized agents (subprocesses) that autonomously handle complex tasks."
 icon: file-brackets-curly
-keywords: ['AgentToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs.AgentToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs', 'class', 'System.Object']
+keywords: ['AgentToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs.AgentToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['AgentToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs.Ag
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -75,12 +73,12 @@ Gets or sets the reasoning effort for this agent. Ignored when `subagent_type` i
 #### Syntax
 
 ```csharp
-public System.Nullable<CloudNimble.ClaudeEssentials.Hooks.ReasoningEffort> Effort { get; set; }
+public CloudNimble.ClaudeEssentials.Hooks.ReasoningEffort? Effort { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<CloudNimble.ClaudeEssentials.Hooks.ReasoningEffort?>?`
+Type: `CloudNimble.ClaudeEssentials.Hooks.ReasoningEffort?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Isolation
 
@@ -89,12 +87,12 @@ Gets or sets the isolation mode for the spawned agent.
 #### Syntax
 
 ```csharp
-public System.Nullable<CloudNimble.ClaudeEssentials.Hooks.AgentIsolationMode> Isolation { get; set; }
+public CloudNimble.ClaudeEssentials.Hooks.AgentIsolationMode? Isolation { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<CloudNimble.ClaudeEssentials.Hooks.AgentIsolationMode?>?`
+Type: `CloudNimble.ClaudeEssentials.Hooks.AgentIsolationMode?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Mode
 
@@ -103,12 +101,12 @@ Gets or sets the permission mode. This value is deprecated and ignored: subagent
 #### Syntax
 
 ```csharp
-public System.Nullable<CloudNimble.ClaudeEssentials.Hooks.PermissionMode> Mode { get; set; }
+public CloudNimble.ClaudeEssentials.Hooks.PermissionMode? Mode { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<CloudNimble.ClaudeEssentials.Hooks.PermissionMode?>?`
+Type: `CloudNimble.ClaudeEssentials.Hooks.PermissionMode?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Model
 
@@ -118,12 +116,12 @@ model frontmatter. If omitted, uses the agent definition's model, or inherits fr
 #### Syntax
 
 ```csharp
-public System.Nullable<CloudNimble.ClaudeEssentials.Hooks.ClaudeModel> Model { get; set; }
+public CloudNimble.ClaudeEssentials.Hooks.ClaudeModel? Model { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<CloudNimble.ClaudeEssentials.Hooks.ClaudeModel?>?`
+Type: `CloudNimble.ClaudeEssentials.Hooks.ClaudeModel?`
 
 #### Remarks
 
@@ -164,12 +162,12 @@ Gets or sets a value indicating whether to run this agent in the background. Age
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> RunInBackground { get; set; }
+public bool? RunInBackground { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> SubagentType
 

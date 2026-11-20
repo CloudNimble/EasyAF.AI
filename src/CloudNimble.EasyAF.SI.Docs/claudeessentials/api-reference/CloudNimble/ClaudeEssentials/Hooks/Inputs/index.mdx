@@ -41,7 +41,7 @@ Console.WriteLine($"Session: {input?.SessionId}");
 
 // For strongly-typed tool input (requires custom JsonSerializerContext)
 var typedInput = ClaudeHooksSerializer.DeserializePreToolUseInput<MyToolInput>(
-json, MyJsonContext.Default.PreToolUseHookInputMyToolInput);
+    json, MyJsonContext.Default.PreToolUseHookInputMyToolInput);
 ```
 
 ### Common Base Properties

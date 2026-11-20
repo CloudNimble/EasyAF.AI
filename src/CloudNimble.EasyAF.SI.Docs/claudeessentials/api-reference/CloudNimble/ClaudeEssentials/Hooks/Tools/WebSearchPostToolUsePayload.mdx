@@ -40,8 +40,8 @@ query and the results returned, enabling search logging or result filtering.
 ## Examples
 
 ```csharp
-var payload = JsonSerializer.Deserialize&lt;WebSearchPostToolUsePayload&gt;(json);
-var resultCount = payload.ToolResponse.Results.SelectMany(r =&gt; r.Content).Count();
+var payload = JsonSerializer.Deserialize<WebSearchPostToolUsePayload>(json);
+var resultCount = payload.ToolResponse.Results.SelectMany(r => r.Content).Count();
 Console.WriteLine($"Found {resultCount} results for '{payload.ToolInput.Query}'");
 ```
 
@@ -154,12 +154,12 @@ Gets or sets the tool execution time in milliseconds, excluding permission-promp
 #### Syntax
 
 ```csharp
-public System.Nullable<long> DurationMs { get; set; }
+public long? DurationMs { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<long>?`
+Type: `long?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Effort <Badge color="gray">Inherited</Badge>
 
@@ -191,7 +191,7 @@ public CloudNimble.ClaudeEssentials.Hooks.HookEventName HookEventName { get; set
 
 #### Property Value
 
-Type: `CloudNimble.ClaudeEssentials.Hooks.HookEventName?`
+Type: `CloudNimble.ClaudeEssentials.Hooks.HookEventName`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> McpServer <Badge color="gray">Inherited</Badge>
 
@@ -218,12 +218,12 @@ Gets or sets the permission mode under which Claude Code is operating.
 #### Syntax
 
 ```csharp
-public System.Nullable<CloudNimble.ClaudeEssentials.Hooks.PermissionMode> PermissionMode { get; set; }
+public CloudNimble.ClaudeEssentials.Hooks.PermissionMode? PermissionMode { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<CloudNimble.ClaudeEssentials.Hooks.PermissionMode?>?`
+Type: `CloudNimble.ClaudeEssentials.Hooks.PermissionMode?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> PromptId <Badge color="gray">Inherited</Badge>
 

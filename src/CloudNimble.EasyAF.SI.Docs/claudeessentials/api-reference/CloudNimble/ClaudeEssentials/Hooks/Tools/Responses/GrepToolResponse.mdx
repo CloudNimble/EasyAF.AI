@@ -2,7 +2,7 @@
 title: GrepToolResponse
 description: "Represents the response payload returned by the Claude Code Grep tool after searching for content within files."
 icon: file-brackets-curly
-keywords: ['GrepToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.GrepToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class', 'System.Object']
+keywords: ['GrepToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.GrepToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['GrepToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Respons
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Responses
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -79,12 +77,12 @@ Gets or sets the head_limit that was applied to the results.
 #### Syntax
 
 ```csharp
-public System.Nullable<int> AppliedLimit { get; set; }
+public int? AppliedLimit { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>`
+Type: `int?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> AppliedOffset
 
@@ -93,12 +91,12 @@ Gets or sets the offset that was applied to the results.
 #### Syntax
 
 ```csharp
-public System.Nullable<int> AppliedOffset { get; set; }
+public int? AppliedOffset { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>`
+Type: `int?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Content
 
@@ -158,12 +156,12 @@ Gets or sets the output mode that was used for the search.
 #### Syntax
 
 ```csharp
-public System.Nullable<CloudNimble.ClaudeEssentials.Hooks.GrepOutputMode> Mode { get; set; }
+public CloudNimble.ClaudeEssentials.Hooks.GrepOutputMode? Mode { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<CloudNimble.ClaudeEssentials.Hooks.GrepOutputMode>`
+Type: `CloudNimble.ClaudeEssentials.Hooks.GrepOutputMode?`
 
 #### Remarks
 
@@ -202,12 +200,12 @@ Gets or sets the number of lines in the content output.
 #### Syntax
 
 ```csharp
-public System.Nullable<int> NumLines { get; set; }
+public int? NumLines { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>`
+Type: `int?`
 
 #### Remarks
 
@@ -220,12 +218,12 @@ Gets or sets the total number of pattern matches found.
 #### Syntax
 
 ```csharp
-public System.Nullable<int> NumMatches { get; set; }
+public int? NumMatches { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>`
+Type: `int?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> TotalFiles
 
@@ -234,12 +232,12 @@ Gets or sets the total number of matching files.
 #### Syntax
 
 ```csharp
-public System.Nullable<int> TotalFiles { get; set; }
+public int? TotalFiles { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>`
+Type: `int?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> TotalLines
 
@@ -248,12 +246,12 @@ Gets or sets the total number of matching lines.
 #### Syntax
 
 ```csharp
-public System.Nullable<int> TotalLines { get; set; }
+public int? TotalLines { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>`
+Type: `int?`
 
 ## Methods
 

@@ -2,7 +2,7 @@
 title: SendFeedbackToolInput
 description: "Represents the input parameters for the SendFeedback tool, which drafts feedback about Claude Code."
 icon: file-brackets-curly
-keywords: ['SendFeedbackToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs.SendFeedbackToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs', 'class', 'System.Object']
+keywords: ['SendFeedbackToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs.SendFeedbackToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['SendFeedbackToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.In
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -80,12 +78,12 @@ Gets or sets the closest failure mode when the report is about model behavior.
 #### Syntax
 
 ```csharp
-public System.Nullable<CloudNimble.ClaudeEssentials.Hooks.FeedbackFailureMode> FailureMode { get; set; }
+public CloudNimble.ClaudeEssentials.Hooks.FeedbackFailureMode? FailureMode { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<CloudNimble.ClaudeEssentials.Hooks.FeedbackFailureMode>`
+Type: `CloudNimble.ClaudeEssentials.Hooks.FeedbackFailureMode?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> TaskCategory
 
@@ -94,12 +92,12 @@ Gets or sets what kind of task the session was doing when the issue occurred.
 #### Syntax
 
 ```csharp
-public System.Nullable<CloudNimble.ClaudeEssentials.Hooks.FeedbackTaskCategory> TaskCategory { get; set; }
+public CloudNimble.ClaudeEssentials.Hooks.FeedbackTaskCategory? TaskCategory { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<CloudNimble.ClaudeEssentials.Hooks.FeedbackTaskCategory>`
+Type: `CloudNimble.ClaudeEssentials.Hooks.FeedbackTaskCategory?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Title
 

@@ -3,7 +3,7 @@ title: ModelSwitchSource
 description: "Represents what initiated a model switch."
 icon: list-ol
 tag: "ENUM"
-keywords: ['ModelSwitchSource', 'CloudNimble.ClaudeEssentials.Hooks.ModelSwitchSource', 'CloudNimble.ClaudeEssentials.Hooks', 'class', 'System.Enum']
+keywords: ['ModelSwitchSource', 'CloudNimble.ClaudeEssentials.Hooks.ModelSwitchSource', 'CloudNimble.ClaudeEssentials.Hooks', 'enum', 'System.Enum', 'System.IComparable', 'System.ISpanFormattable', 'System.IFormattable', 'System.IConvertible']
 ---
 
 ## Definition
@@ -28,9 +28,16 @@ Represents what initiated a model switch.
 
 | Name | Value | Description |
 |------|-------|-------------|
-| `Command` | 0 | A command, such as <c>/model</c>, or the configuration UI. |
+| `Command` | 0 | A command, such as `/model`, or the configuration UI. |
 | `Picker` | 1 | An interactive model picker. |
 | `Sdk` | 2 | A headless request from the SDK, Remote Control, or an IDE. |
 | `Auto` | 3 | An automatic fallback. Reported only after the switch. |
 | `Resume` | 4 | Resuming a session. Reported only after the switch. |
+
+## Related APIs
+
+- System.IComparable
+- System.ISpanFormattable
+- System.IFormattable
+- System.IConvertible
 

@@ -2,7 +2,7 @@
 title: ArtifactWatchResult
 description: "Represents the result of the Artifact tool's watch action."
 icon: file-brackets-curly
-keywords: ['ArtifactWatchResult', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.ArtifactWatchResult', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class', 'System.Object']
+keywords: ['ArtifactWatchResult', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.ArtifactWatchResult', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['ArtifactWatchResult', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Resp
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Responses
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -164,12 +162,12 @@ Gets or sets when the live watch started, in epoch milliseconds.
 #### Syntax
 
 ```csharp
-public System.Nullable<long> Since { get; set; }
+public long? Since { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<long>?`
+Type: `long?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Status
 
@@ -178,12 +176,12 @@ Gets or sets the HTTP status of the request.
 #### Syntax
 
 ```csharp
-public System.Nullable<int> Status { get; set; }
+public int? Status { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>?`
+Type: `int?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> TaskId
 
@@ -206,12 +204,12 @@ Gets or sets when the watch token expires, in epoch milliseconds.
 #### Syntax
 
 ```csharp
-public System.Nullable<long> TokenExpiresAt { get; set; }
+public long? TokenExpiresAt { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<long>?`
+Type: `long?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> TriggerId
 

@@ -2,7 +2,7 @@
 title: PostToolBatchToolCall
 description: "Represents one tool call in a resolved batch."
 icon: file-brackets-curly
-keywords: ['PostToolBatchToolCall', 'CloudNimble.ClaudeEssentials.Hooks.Inputs.PostToolBatchToolCall', 'CloudNimble.ClaudeEssentials.Hooks.Inputs', 'class', 'System.Object']
+keywords: ['PostToolBatchToolCall', 'CloudNimble.ClaudeEssentials.Hooks.Inputs.PostToolBatchToolCall', 'CloudNimble.ClaudeEssentials.Hooks.Inputs', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['PostToolBatchToolCall', 'CloudNimble.ClaudeEssentials.Hooks.Inputs.P
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Inputs
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -52,12 +50,12 @@ Gets or sets the input parameters for the tool.
 #### Syntax
 
 ```csharp
-public System.Nullable<System.Text.Json.JsonElement> ToolInput { get; set; }
+public System.Text.Json.JsonElement? ToolInput { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<System.Text.Json.JsonElement>`
+Type: `System.Text.Json.JsonElement?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> ToolName
 
@@ -80,12 +78,12 @@ Gets or sets the response returned by the tool.
 #### Syntax
 
 ```csharp
-public System.Nullable<System.Text.Json.JsonElement> ToolResponse { get; set; }
+public System.Text.Json.JsonElement? ToolResponse { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<System.Text.Json.JsonElement>`
+Type: `System.Text.Json.JsonElement?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> ToolUseId
 

@@ -2,7 +2,7 @@
 title: CronCreateToolInput
 description: "Represents the input parameters for the CronCreate tool, which schedules a prompt on a cron expression."
 icon: file-brackets-curly
-keywords: ['CronCreateToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs.CronCreateToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs', 'class', 'System.Object']
+keywords: ['CronCreateToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs.CronCreateToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['CronCreateToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inpu
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -66,12 +64,12 @@ Gets or sets a value indicating whether to persist the job so that it survives r
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> Durable { get; set; }
+public bool? Durable { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Prompt
 
@@ -94,12 +92,12 @@ Gets or sets a value indicating whether to fire on every match until deleted or 
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> Recurring { get; set; }
+public bool? Recurring { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>`
+Type: `bool?`
 
 ## Methods
 

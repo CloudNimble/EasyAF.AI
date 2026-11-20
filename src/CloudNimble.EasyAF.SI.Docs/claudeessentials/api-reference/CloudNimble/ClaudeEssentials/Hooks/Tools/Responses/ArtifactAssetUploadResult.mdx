@@ -2,7 +2,7 @@
 title: ArtifactAssetUploadResult
 description: "Represents the result of uploading one file in a batch."
 icon: file-brackets-curly
-keywords: ['ArtifactAssetUploadResult', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.ArtifactAssetUploadResult', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class', 'System.Object']
+keywords: ['ArtifactAssetUploadResult', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.ArtifactAssetUploadResult', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['ArtifactAssetUploadResult', 'CloudNimble.ClaudeEssentials.Hooks.Tool
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Responses
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -112,12 +110,12 @@ Gets or sets a value indicating whether the file may have been stored despite th
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> MayBeStored { get; set; }
+public bool? MayBeStored { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Message
 
@@ -168,12 +166,12 @@ Gets or sets the asset's size in bytes.
 #### Syntax
 
 ```csharp
-public System.Nullable<long> SizeBytes { get; set; }
+public long? SizeBytes { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<long>?`
+Type: `long?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Status
 
@@ -187,7 +185,7 @@ public CloudNimble.ClaudeEssentials.Hooks.ArtifactAssetUploadStatus Status { get
 
 #### Property Value
 
-Type: `CloudNimble.ClaudeEssentials.Hooks.ArtifactAssetUploadStatus?`
+Type: `CloudNimble.ClaudeEssentials.Hooks.ArtifactAssetUploadStatus`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Url
 

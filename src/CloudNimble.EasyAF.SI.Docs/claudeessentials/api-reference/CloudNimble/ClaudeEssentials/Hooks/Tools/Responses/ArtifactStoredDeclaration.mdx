@@ -2,7 +2,7 @@
 title: ArtifactStoredDeclaration
 description: "Represents the capability declaration stored on an artifact."
 icon: file-brackets-curly
-keywords: ['ArtifactStoredDeclaration', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.ArtifactStoredDeclaration', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class', 'System.Object']
+keywords: ['ArtifactStoredDeclaration', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.ArtifactStoredDeclaration', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['ArtifactStoredDeclaration', 'CloudNimble.ClaudeEssentials.Hooks.Tool
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Responses
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -57,7 +55,7 @@ public System.Collections.Generic.Dictionary<string, System.Text.Json.JsonElemen
 
 #### Property Value
 
-Type: `System.Collections.Generic.Dictionary<string, System.Text.Json.JsonElement>`
+Type: `System.Collections.Generic.Dictionary<string, System.Text.Json.JsonElement>?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Carried
 
@@ -66,12 +64,12 @@ Gets or sets a value indicating whether the declaration was carried forward from
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> Carried { get; set; }
+public bool? Carried { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Contract
 

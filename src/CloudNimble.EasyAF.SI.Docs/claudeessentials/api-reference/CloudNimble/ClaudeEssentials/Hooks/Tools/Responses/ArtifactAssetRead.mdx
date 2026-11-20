@@ -2,7 +2,7 @@
 title: ArtifactAssetRead
 description: "Represents the result of the Artifact tool's read_asset action."
 icon: file-brackets-curly
-keywords: ['ArtifactAssetRead', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.ArtifactAssetRead', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class', 'System.Object']
+keywords: ['ArtifactAssetRead', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.ArtifactAssetRead', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['ArtifactAssetRead', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Respon
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Responses
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -66,12 +64,12 @@ Gets or sets a value indicating whether other people have written to the store.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> Cowritten { get; set; }
+public bool? Cowritten { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Foreign
 
@@ -80,12 +78,12 @@ Gets or sets a value indicating whether the asset belongs to an artifact the use
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> Foreign { get; set; }
+public bool? Foreign { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Id
 
@@ -108,12 +106,12 @@ Gets or sets a value indicating whether someone outside the organization has wri
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> OutsideWriter { get; set; }
+public bool? OutsideWriter { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Path
 
@@ -136,12 +134,12 @@ Gets or sets a value indicating whether the asset was read through a public path
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> PublicRead { get; set; }
+public bool? PublicRead { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Sha256
 

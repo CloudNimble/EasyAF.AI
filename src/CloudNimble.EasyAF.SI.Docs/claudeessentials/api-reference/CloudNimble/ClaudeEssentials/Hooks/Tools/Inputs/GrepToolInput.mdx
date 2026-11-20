@@ -2,7 +2,7 @@
 title: GrepToolInput
 description: "Represents the input parameters for the Grep tool. The Grep tool is a powerful content search built on ripgrep."
 icon: file-brackets-curly
-keywords: ['GrepToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs.GrepToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs', 'class', 'System.Object']
+keywords: ['GrepToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs.GrepToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['GrepToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs.Gre
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -58,12 +56,12 @@ Gets or sets whether to perform case insensitive search.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> CaseInsensitive { get; set; }
+public bool? CaseInsensitive { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Context
 
@@ -72,12 +70,12 @@ Gets or sets the number of lines to show before and after each match (rg -C).
 #### Syntax
 
 ```csharp
-public System.Nullable<int> Context { get; set; }
+public int? Context { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>?`
+Type: `int?`
 
 #### Remarks
 
@@ -108,12 +106,12 @@ Gets or sets the limit on output to first N lines/entries.
 #### Syntax
 
 ```csharp
-public System.Nullable<int> HeadLimit { get; set; }
+public int? HeadLimit { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>?`
+Type: `int?`
 
 #### Remarks
 
@@ -126,12 +124,12 @@ Gets or sets the number of lines to show after each match.
 #### Syntax
 
 ```csharp
-public System.Nullable<int> LinesAfter { get; set; }
+public int? LinesAfter { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>?`
+Type: `int?`
 
 #### Remarks
 
@@ -144,12 +142,12 @@ Gets or sets the number of lines to show before each match.
 #### Syntax
 
 ```csharp
-public System.Nullable<int> LinesBefore { get; set; }
+public int? LinesBefore { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>?`
+Type: `int?`
 
 #### Remarks
 
@@ -163,12 +161,12 @@ Alias for [GrepToolInput.Context](/claudeessentials/api-reference/CloudNimble/Cl
 #### Syntax
 
 ```csharp
-public System.Nullable<int> LinesContext { get; set; }
+public int? LinesContext { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>?`
+Type: `int?`
 
 #### Remarks
 
@@ -181,12 +179,12 @@ Gets or sets whether to enable multiline mode.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> Multiline { get; set; }
+public bool? Multiline { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 #### Remarks
 
@@ -199,12 +197,12 @@ Gets or sets the number of lines/entries to skip before applying head_limit.
 #### Syntax
 
 ```csharp
-public System.Nullable<int> Offset { get; set; }
+public int? Offset { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>?`
+Type: `int?`
 
 #### Remarks
 
@@ -217,12 +215,12 @@ Gets or sets a value indicating whether to print only the matched parts of each 
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> OnlyMatching { get; set; }
+public bool? OnlyMatching { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> OutputMode
 
@@ -231,16 +229,16 @@ Gets or sets the output mode.
 #### Syntax
 
 ```csharp
-public System.Nullable<CloudNimble.ClaudeEssentials.Hooks.GrepOutputMode> OutputMode { get; set; }
+public CloudNimble.ClaudeEssentials.Hooks.GrepOutputMode? OutputMode { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<CloudNimble.ClaudeEssentials.Hooks.GrepOutputMode?>?`
+Type: `CloudNimble.ClaudeEssentials.Hooks.GrepOutputMode?`
 
 #### Remarks
 
-See [GrepOutputMode](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/GrepOutputMode) for possible values. Defaults to [GrepOutputMode.FilesWithMatches](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/GrepOutputMode#fileswithmatches).
+See [GrepOutputMode](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/GrepOutputMode) for possible values. Defaults to [GrepOutputMode.FilesWithMatches](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/GrepOutputMode).
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Path
 
@@ -285,12 +283,12 @@ Gets or sets whether to show line numbers in output.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> ShowLineNumbers { get; set; }
+public bool? ShowLineNumbers { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>?`
+Type: `bool?`
 
 #### Remarks
 

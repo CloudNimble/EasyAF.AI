@@ -2,7 +2,7 @@
 title: ReadToolInput
 description: "Represents the input parameters for the Read tool. The Read tool reads files from the local filesystem."
 icon: file-brackets-curly
-keywords: ['ReadToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs.ReadToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs', 'class', 'System.Object']
+keywords: ['ReadToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs.ReadToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['ReadToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs.Rea
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -60,12 +58,12 @@ Gets or sets a value indicating whether to read a text file, or a line range of 
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> AllowLarge { get; set; }
+public bool? AllowLarge { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> FilePath
 
@@ -92,12 +90,12 @@ Gets or sets the number of lines to read.
 #### Syntax
 
 ```csharp
-public System.Nullable<int> Limit { get; set; }
+public int? Limit { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>`
+Type: `int?`
 
 #### Remarks
 
@@ -110,12 +108,12 @@ Gets or sets the line number to start reading from.
 #### Syntax
 
 ```csharp
-public System.Nullable<int> Offset { get; set; }
+public int? Offset { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>`
+Type: `int?`
 
 #### Remarks
 

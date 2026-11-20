@@ -2,7 +2,7 @@
 title: GlobToolResponse
 description: "Represents the response payload returned by the Claude Code Glob tool after searching for files matching a pattern."
 icon: file-brackets-curly
-keywords: ['GlobToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.GlobToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class', 'System.Object']
+keywords: ['GlobToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.GlobToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['GlobToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Respons
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Responses
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -77,12 +75,12 @@ Gets or sets a value indicating whether `totalMatches` is the exact total rather
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> CountIsComplete { get; set; }
+public bool? CountIsComplete { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> DurationMs
 
@@ -158,12 +156,12 @@ Gets or sets the total number of matching files before truncation. A lower bound
 #### Syntax
 
 ```csharp
-public System.Nullable<int> TotalMatches { get; set; }
+public int? TotalMatches { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>`
+Type: `int?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Truncated
 

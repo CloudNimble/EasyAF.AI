@@ -2,7 +2,7 @@
 title: ExitWorktreeToolResponse
 description: "Represents the response payload returned by the Claude Code ExitWorktree tool after exiting and optionally removing a git worktree."
 icon: file-brackets-curly
-keywords: ['ExitWorktreeToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.ExitWorktreeToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class', 'System.Object']
+keywords: ['ExitWorktreeToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.ExitWorktreeToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['ExitWorktreeToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Responses
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -82,12 +80,12 @@ Gets or sets the number of unmerged commits that were discarded when removing th
 #### Syntax
 
 ```csharp
-public System.Nullable<int> DiscardedCommits { get; set; }
+public int? DiscardedCommits { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>`
+Type: `int?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> DiscardedFiles
 
@@ -96,12 +94,12 @@ Gets or sets the number of uncommitted files that were discarded when removing t
 #### Syntax
 
 ```csharp
-public System.Nullable<int> DiscardedFiles { get; set; }
+public int? DiscardedFiles { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>`
+Type: `int?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Message
 

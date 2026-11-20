@@ -2,7 +2,7 @@
 title: ScheduleWakeupToolResponse
 description: "Represents the response payload returned by the ScheduleWakeup tool."
 icon: file-brackets-curly
-keywords: ['ScheduleWakeupToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.ScheduleWakeupToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class', 'System.Object']
+keywords: ['ScheduleWakeupToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.ScheduleWakeupToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['ScheduleWakeupToolResponse', 'CloudNimble.ClaudeEssentials.Hooks.Too
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Responses
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -52,12 +50,12 @@ Gets or sets how many pending dynamic-loop wakeups the stop request cancelled.
 #### Syntax
 
 ```csharp
-public System.Nullable<int> CancelledWakeups { get; set; }
+public int? CancelledWakeups { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>`
+Type: `int?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> ClampedDelaySeconds
 
@@ -94,12 +92,12 @@ Gets or sets a value indicating whether the model ended the loop.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> Stopped { get; set; }
+public bool? Stopped { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> WasClamped
 

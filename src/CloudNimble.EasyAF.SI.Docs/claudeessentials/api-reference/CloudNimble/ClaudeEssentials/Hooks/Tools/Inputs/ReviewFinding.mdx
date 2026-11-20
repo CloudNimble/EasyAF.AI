@@ -2,7 +2,7 @@
 title: ReviewFinding
 description: "Represents a single code review finding."
 icon: file-brackets-curly
-keywords: ['ReviewFinding', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs.ReviewFinding', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs', 'class', 'System.Object']
+keywords: ['ReviewFinding', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs.ReviewFinding', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['ReviewFinding', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs.Rev
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -94,12 +92,12 @@ Gets or sets the 1-indexed line the finding anchors to.
 #### Syntax
 
 ```csharp
-public System.Nullable<int> Line { get; set; }
+public int? Line { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>`
+Type: `int?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Outcome
 
@@ -108,12 +106,12 @@ Gets or sets what happened to this finding. Set only when re-reporting after app
 #### Syntax
 
 ```csharp
-public System.Nullable<CloudNimble.ClaudeEssentials.Hooks.ReviewFindingOutcome> Outcome { get; set; }
+public CloudNimble.ClaudeEssentials.Hooks.ReviewFindingOutcome? Outcome { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<CloudNimble.ClaudeEssentials.Hooks.ReviewFindingOutcome>`
+Type: `CloudNimble.ClaudeEssentials.Hooks.ReviewFindingOutcome?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> ShortSummary
 
@@ -150,12 +148,12 @@ Gets or sets the result of a verify pass. Absent on inline-only reviews.
 #### Syntax
 
 ```csharp
-public System.Nullable<CloudNimble.ClaudeEssentials.Hooks.ReviewFindingVerdict> Verdict { get; set; }
+public CloudNimble.ClaudeEssentials.Hooks.ReviewFindingVerdict? Verdict { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<CloudNimble.ClaudeEssentials.Hooks.ReviewFindingVerdict>`
+Type: `CloudNimble.ClaudeEssentials.Hooks.ReviewFindingVerdict?`
 
 ## Methods
 

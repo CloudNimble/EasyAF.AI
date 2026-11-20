@@ -2,7 +2,7 @@
 title: NotebookEditToolInput
 description: "Represents the input parameters for the NotebookEdit tool. The NotebookEdit tool replaces the contents of a specific cell in a Jupyter notebook."
 icon: file-brackets-curly
-keywords: ['NotebookEditToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs.NotebookEditToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs', 'class', 'System.Object']
+keywords: ['NotebookEditToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs.NotebookEditToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['NotebookEditToolInput', 'CloudNimble.ClaudeEssentials.Hooks.Tools.In
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Inputs
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -72,12 +70,12 @@ Gets or sets the type of the cell.
 #### Syntax
 
 ```csharp
-public System.Nullable<CloudNimble.ClaudeEssentials.Hooks.NotebookCellType> CellType { get; set; }
+public CloudNimble.ClaudeEssentials.Hooks.NotebookCellType? CellType { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<CloudNimble.ClaudeEssentials.Hooks.NotebookCellType>`
+Type: `CloudNimble.ClaudeEssentials.Hooks.NotebookCellType?`
 
 #### Remarks
 
@@ -91,16 +89,16 @@ Gets or sets the type of edit to make.
 #### Syntax
 
 ```csharp
-public System.Nullable<CloudNimble.ClaudeEssentials.Hooks.NotebookEditMode> EditMode { get; set; }
+public CloudNimble.ClaudeEssentials.Hooks.NotebookEditMode? EditMode { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<CloudNimble.ClaudeEssentials.Hooks.NotebookEditMode>`
+Type: `CloudNimble.ClaudeEssentials.Hooks.NotebookEditMode?`
 
 #### Remarks
 
-See [NotebookEditMode](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/NotebookEditMode) for possible values. Defaults to [NotebookEditMode.Replace](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/NotebookEditMode#replace).
+See [NotebookEditMode](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/NotebookEditMode) for possible values. Defaults to [NotebookEditMode.Replace](/claudeessentials/api-reference/CloudNimble/ClaudeEssentials/Hooks/NotebookEditMode).
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> NewSource
 

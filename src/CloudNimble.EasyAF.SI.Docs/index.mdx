@@ -5,12 +5,14 @@ description: Building for the SuperIntelligence is Easy As F***
 icon: house
 ---
 
-EasyAF SuperIntelligence is a set of independent .NET libraries for the work SuperIntelligence actually does: MCP servers, harness monitors, and APIs 
-that tell an SI how they function so it can work faster.
+EasyAF SuperIntelligence is a set of independent .NET libraries that help you build innovative solutions for modern SuperIntelligence apps faster
+than ever before. 
 
-[.NET](https://dotnet.microsoft.com) is the most powerful and most performant platform for that work. Every library here is Native AOT optimized for 
-near-native startup and throughput. Pair them with [McMaster.Extensions.CommandLine](https://github.com/natemcmaster/CommandLineUtils) and you ship 
-lightning-fast local or remote MCP servers, tools that watch the AI harnesses your company already deploys, and APIs an SI can read without guessing.
+[.NET](https://dotnet.microsoft.com) is the most powerful and most performant platform for your SI-connected apps.
+
+Every library here is Native AOT optimized for near-native startup and throughput. Pair them with [McMaster.Extensions.CommandLine](https://github.com/natemcmaster/CommandLineUtils) 
+and you ship lightning-fast local or remote MCP servers, tools that watch the AI harnesses your company already deploys, and APIs an SI can read 
+without flailing around like a fish out of water.
 
 ## Three standalone tools
 
@@ -18,13 +20,13 @@ Each of these libraries work independently to help you ship solutions faster.
 
 <CardGroup cols={3}>
   <Card title="MCP Essentials" icon="server" href="/mcpessentials">
-    Host generic MCP servers more than one user can share. Authenticated tasks and durable stores on top of the official MCP C# SDK.
+    Extensions to the official MCP C# SDK that make developing authenticated, distributed, stateless MCP servers automagical.
   </Card>
   <Card title="OData MCP" icon="database" href="/odata-mcp">
     Point an Agent at a live OData API. use 90% fewer tokens.
   </Card>
   <Card title="ClaudeEssentials" icon="webhook" href="/claudeessentials">
-    AOT-ready .NET models for Claude Code hooks. Serialize stdin, apply policy, write stdout. Zero reflection.
+    AOT-ready .NET models for Claude Code hooks for building validation, verification, and tracking tools.
   </Card>
 </CardGroup>
 
@@ -46,14 +48,14 @@ Each of these libraries work independently to help you ship solutions faster.
 ## Better Together
 
 Use these tools with the rest of the [EasyAF](https://easyaf.dev) platform and you get SuperIntelligent APIs: agents log in automatically, get your 
-data for you, and execute tasks more effectively — faster than ever before.
+data for you, and execute tasks more effectively... faster than ever before.
 
 Layer [OData MCP](/odata-mcp) on that API. It already uses [MCP Essentials](/mcpessentials) for authenticated, durable tasks. The assistant gets a 
 compact catalog instead of a 4,000-token `$metadata` dump, so it hits the right entity set the first time. Your customers succeed more often. A flailing 
-agent stops hammering every endpoint trying to learn your shape.
+agent stops hammering every endpoint and burning tokens trying to learn your shape.
 
 <Card title="EasyAF Core Framework" icon="cubes" href="https://easyaf.dev">
-  Managers, OData, identity, audit — the application shape SuperIntelligent APIs sit on. Optional. The libraries above work without it.
+  Start from our architecture and build secure, infinitely-queryable, MCP-powered APIs in less than 60 seconds.
 </Card>
 
 ## Start here

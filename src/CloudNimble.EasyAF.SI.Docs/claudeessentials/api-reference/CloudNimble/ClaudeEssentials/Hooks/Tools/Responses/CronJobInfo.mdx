@@ -2,7 +2,7 @@
 title: CronJobInfo
 description: "Represents a scheduled job returned by the CronList tool."
 icon: file-brackets-curly
-keywords: ['CronJobInfo', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.CronJobInfo', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class', 'System.Object']
+keywords: ['CronJobInfo', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.CronJobInfo', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['CronJobInfo', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.Cr
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Responses
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -66,12 +64,12 @@ Gets or sets a value indicating whether the job survives restarts.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> Durable { get; set; }
+public bool? Durable { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>`
+Type: `bool?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> HumanSchedule
 
@@ -108,12 +106,12 @@ Gets or sets the epoch milliseconds of the job's next run, including the schedul
 #### Syntax
 
 ```csharp
-public System.Nullable<long> NextFireAt { get; set; }
+public long? NextFireAt { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<long>`
+Type: `long?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> Prompt
 
@@ -136,12 +134,12 @@ Gets or sets a value indicating whether the job recurs.
 #### Syntax
 
 ```csharp
-public System.Nullable<bool> Recurring { get; set; }
+public bool? Recurring { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<bool>`
+Type: `bool?`
 
 ## Methods
 

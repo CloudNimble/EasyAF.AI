@@ -2,7 +2,7 @@
 title: AgentUsageInfo
 description: "Contains token usage information for a completed agent execution, including input/output token counts, cache statistics, and server-side tool use."
 icon: file-brackets-curly
-keywords: ['AgentUsageInfo', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.AgentUsageInfo', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class', 'System.Object']
+keywords: ['AgentUsageInfo', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses.AgentUsageInfo', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses', 'class']
 ---
 
 ## Definition
@@ -10,8 +10,6 @@ keywords: ['AgentUsageInfo', 'CloudNimble.ClaudeEssentials.Hooks.Tools.Responses
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks.Tools.Responses
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -67,12 +65,12 @@ Gets or sets the number of input tokens used for cache creation.
 #### Syntax
 
 ```csharp
-public System.Nullable<int> CacheCreationInputTokens { get; set; }
+public int? CacheCreationInputTokens { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>?`
+Type: `int?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> CacheReadInputTokens
 
@@ -81,12 +79,12 @@ Gets or sets the number of input tokens read from cache.
 #### Syntax
 
 ```csharp
-public System.Nullable<int> CacheReadInputTokens { get; set; }
+public int? CacheReadInputTokens { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<int>?`
+Type: `int?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> FallbackCredit
 
@@ -95,12 +93,12 @@ Gets or sets the fallback credit details.
 #### Syntax
 
 ```csharp
-public System.Nullable<System.Text.Json.JsonElement> FallbackCredit { get; set; }
+public System.Text.Json.JsonElement? FallbackCredit { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<System.Text.Json.JsonElement?>?`
+Type: `System.Text.Json.JsonElement?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> InferenceGeo
 
@@ -137,12 +135,12 @@ Gets or sets the per-iteration usage details.
 #### Syntax
 
 ```csharp
-public System.Nullable<System.Text.Json.JsonElement> Iterations { get; set; }
+public System.Text.Json.JsonElement? Iterations { get; set; }
 ```
 
 #### Property Value
 
-Type: `System.Nullable<System.Text.Json.JsonElement?>?`
+Type: `System.Text.Json.JsonElement?`
 
 ### <Icon icon="tag" iconType="duotone" color="#419AC5" size={24} className="mr-2" /> OutputTokens
 

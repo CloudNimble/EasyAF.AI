@@ -3,7 +3,7 @@ title: ClaudeHooksSerializer
 description: "Provides static helper methods for serializing and deserializing Claude Code hook types. All methods use the AOT-compatible `ClaudeHooksJsonContext` for seri..."
 icon: bolt
 tag: "STATIC"
-keywords: ['ClaudeHooksSerializer', 'CloudNimble.ClaudeEssentials.Hooks.ClaudeHooksSerializer', 'CloudNimble.ClaudeEssentials.Hooks', 'class', 'System.Object']
+keywords: ['ClaudeHooksSerializer', 'CloudNimble.ClaudeEssentials.Hooks.ClaudeHooksSerializer', 'CloudNimble.ClaudeEssentials.Hooks', 'class']
 ---
 
 ## Definition
@@ -11,8 +11,6 @@ keywords: ['ClaudeHooksSerializer', 'CloudNimble.ClaudeEssentials.Hooks.ClaudeHo
 **Assembly:** CloudNimble.ClaudeEssentials.dll
 
 **Namespace:** CloudNimble.ClaudeEssentials.Hooks
-
-**Inheritance:** System.Object
 
 ## Syntax
 
@@ -59,7 +57,7 @@ For strongly-typed tool inputs, create your own `JsonSerializerContext`:
 public partial class MyJsonContext : JsonSerializerContext { }
 
 var input = ClaudeHooksSerializer.DeserializePreToolUseInput<MyToolInput>(
-json, MyJsonContext.Default.PreToolUseHookInputMyToolInput);
+    json, MyJsonContext.Default.PreToolUseHookInputMyToolInput);
 ```
 
 ## Remarks
@@ -2819,10 +2817,10 @@ The JSON string representation.
 #### Examples
 
 ```csharp
-var output = new PreToolUseHookOutput&lt;BashToolInput&gt;
+var output = new PreToolUseHookOutput<BashToolInput>
 {
     Continue = true,
-    HookSpecificOutput = new PreToolUseSpecificOutput&lt;BashToolInput&gt;
+    HookSpecificOutput = new PreToolUseSpecificOutput<BashToolInput>
     {
         PermissionDecision = PermissionDecision.Allow,
         UpdatedInput = new BashToolInput { Command = "echo safe" }
