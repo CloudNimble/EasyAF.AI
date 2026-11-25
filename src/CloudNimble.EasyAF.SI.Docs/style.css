@@ -39,16 +39,16 @@ li button div {
     }
 
 ::-webkit-scrollbar-track {
-    background: #0A1628;
+    background: rgba(245, 141, 77, 0.1);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, #3CD0E2, #419AC5);
+    background: linear-gradient(180deg, #FFB07A, #F58D4D);
     border-radius: 6px;
 }
 
     ::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(180deg, #419AC5, #3CD0E2);
+        background: linear-gradient(180deg, #F58D4D, #FFB07A);
     }
 
 /* Smooth scrolling */

@@ -3,9 +3,9 @@
     "default": "dark"
   },
   "colors": {
-    "primary": "#419AC5",
-    "dark": "#3CD0E2",
-    "light": "#419AC5"
+    "primary": "#F58D4D",
+    "dark": "#E0EC32",
+    "light": "#F58D4D"
   },
   "interaction": {
     "drilldown": true
@@ -1018,6 +1018,10 @@
       {
         "tab": "Core Framework",
         "href": "https://easyaf.nimbleapps.cloud"
+      },
+      {
+        "tab": "Document Everything",
+        "href": "https://dotnetdocs.com"
       }
     ]
   },

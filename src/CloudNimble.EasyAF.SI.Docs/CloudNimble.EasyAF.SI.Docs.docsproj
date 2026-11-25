@@ -15,9 +15,9 @@
             <Name>EasyAF SI</Name>
             <Theme>maple</Theme>
             <Colors>
-                <Primary>#419AC5</Primary>
-                <Light>#419AC5</Light>
-                <Dark>#3CD0E2</Dark>
+                <Primary>#F58D4D</Primary>
+                <Light>#F58D4D</Light>
+                <Dark>#E0EC32</Dark>
             </Colors>
             <Appearance>
                 <Default>dark</Default>
@@ -40,6 +40,8 @@
                 <Tabs>
                     <!-- Href-only; moved to the end after DocumentationReference tabs are appended. -->
                     <Tab Name="Core Framework" Href="https://easyaf.nimbleapps.cloud" Position="End" />
+
+                    <Tab Name="Document Everything" Href="https://dotnetdocs.com" Position="End" />
                 </Tabs>
             </Navigation>
             <Interaction>
